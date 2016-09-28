@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import "MMDrawerController.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +18,26 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    [Fabric with:@[[Crashlytics class]]];
+    
+    UIViewController *centerViewController = [UIViewController new];
+    centerViewController.view.backgroundColor = [UIColor redColor];
+    
+    UIViewController *leftViewController = [UIViewController new];
+    leftViewController.view.backgroundColor = [UIColor blueColor];
+    
+    MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:centerViewController leftDrawerViewController:leftViewController];
+    [drawerController setShowsShadow:NO];
+    [drawerController setMaximumLeftDrawerWidth:(CGRectGetWidth([UIScreen mainScreen].bounds) - 68.7)];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window = [[UIWindow alloc] init];
+    self.window.frame = [UIScreen mainScreen].bounds;
+    self.window.rootViewController = drawerController;
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
