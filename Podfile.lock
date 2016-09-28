@@ -30,6 +30,8 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
+  - pop (1.0.9)
+  - SnapKit (3.0.1)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -40,6 +42,8 @@ DEPENDENCIES:
   - Fabric (~> 1.6.9)
   - Masonry (~> 0.6.3)
   - MMDrawerController (~> 0.6.0)
+  - pop (~> 1.0.9)
+  - SnapKit (~> 3.0)
   - YYKit (~> 1.0.9)
 
 SPEC CHECKSUMS:
@@ -48,6 +52,8 @@ SPEC CHECKSUMS:
   Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 COCOAPODS: 0.39.0

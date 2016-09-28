@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D0B78BEAE2ED32CEE4482D18'
+               BlueprintIdentifier = '30886BF1BBD62AA0449188F5'
                BlueprintName = 'Pods-PropertyExchange'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-PropertyExchange.a'>
+               BuildableName = 'Pods_PropertyExchange.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

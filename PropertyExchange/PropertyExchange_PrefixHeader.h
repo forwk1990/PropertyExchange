@@ -9,6 +9,8 @@
 #ifndef PropertyExchange_PrefixHeader_h
 #define PropertyExchange_PrefixHeader_h
 
-#import "YYKit.h"
+#import <YYKit/YYKit.h>
+#import <pop/POP.h>
+#import <Masonry/Masonry.h>
 
 #endif /* PropertyExchange_PrefixHeader_h */
