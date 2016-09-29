@@ -25,7 +25,7 @@
 @required
 - (NSString *)requestUrl;
 - (NSDictionary<NSString*,id>*)parameters;
-- (void)networkManager:(YPNetworkManager *)manager successResponseObject:(id)responseObject;
+- (void)networkManager:(YPNetworkManager *)manager successResponseObject:(NSObject *)responseObject;
 - (void)networkManager:(YPNetworkManager *)manager failureResponseError:(NSError *)error;
 
 @end

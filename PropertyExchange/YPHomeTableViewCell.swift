@@ -59,7 +59,8 @@ class YPHomeTableViewCell: UITableViewCell {
     self.indicatorImageView.snp.makeConstraints { (make) in
       make.right.equalTo(self.contentView).offset(-18)
       make.centerY.equalTo(self.contentView)
-      make.width.height.equalTo(16)
+      make.width.equalTo(10)
+      make.height.equalTo(16)
     }
   }
   

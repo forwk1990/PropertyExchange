@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PropertyExchange/MMDrawerController.framework"
   install_framework "Pods-PropertyExchange/Masonry.framework"
   install_framework "Pods-PropertyExchange/SnapKit.framework"
+  install_framework "Pods-PropertyExchange/SwiftyJSON.framework"
   install_framework "Pods-PropertyExchange/YYKit.framework"
   install_framework "Pods-PropertyExchange/pop.framework"
 fi
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PropertyExchange/MMDrawerController.framework"
   install_framework "Pods-PropertyExchange/Masonry.framework"
   install_framework "Pods-PropertyExchange/SnapKit.framework"
+  install_framework "Pods-PropertyExchange/SwiftyJSON.framework"
   install_framework "Pods-PropertyExchange/YYKit.framework"
   install_framework "Pods-PropertyExchange/pop.framework"
 fi
