@@ -178,7 +178,6 @@ class YPOrderSegementControl: UIView {
       }
       
       self.visibleSegementItems[self.selectedIndex].titleLabel.textColor = self.selectedTitleColor
-      
       self.delegate?.segementControl(segementControl: self, didSelectedIndex: m_selectedIndex,sortByStatus: _items[self.selectedIndex].status)
     }
   }

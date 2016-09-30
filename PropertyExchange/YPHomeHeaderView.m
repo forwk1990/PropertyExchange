@@ -7,6 +7,7 @@
 //
 
 #import "YPHomeHeaderView.h"
+#import "NSString+DecimalFormat.h"
 
 @interface YPHomeHeaderView ()
 
@@ -46,7 +47,7 @@
   if(_totalMoneyLabel == nil){
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = NSTextAlignmentLeft;
-    label.text = [NSString stringWithFormat:@"平台已累计交易 ¥1688,8888,8880"];
+    label.text = [NSString stringWithFormat:@"平台已累计交易 ¥%@",[NSString decimalStringWithFloat:168888888880]];
     label.font = [UIFont systemFontOfSize:14];
     label.textColor = [UIColor colorWithRGB:0xFFFFFF];
     _totalMoneyLabel = label;

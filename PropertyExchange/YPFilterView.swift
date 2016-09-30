@@ -21,7 +21,29 @@ extension YPFilterView:UICollectionViewDataSource
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyExchange.YPFilterCollectionViewCell", for: indexPath) as! YPFilterCollectionViewCell
     cell.model = self.filterModels[indexPath.section].items[indexPath.row]
+    //cell.isChecked = false
     return cell;
+  }
+  
+  
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    
+    if kind == UICollectionElementKindSectionHeader{
+      let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: YPFilterCollectionHeaderView.className(), for: indexPath)
+      headerView.setValue(self.filterModels[indexPath.section].title, forKey: "model")
+      return headerView
+    }
+    
+    return UICollectionReusableView()
+  }
+  
+}
+
+extension YPFilterView:UICollectionViewDelegate
+{
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath) as! YPFilterCollectionViewCell
+    cell.isChecked = !cell.isChecked
   }
 }
 
@@ -41,8 +63,11 @@ class YPFilterView: UIView
     button.backgroundColor = UIColor.colorWithHex(hex: 0xC8A064)
     button.setTitle("确定", for: .normal)
     button.setTitleColor(UIColor.colorWithHex(hex: 0xFFFFFF), for: .normal)
+    button.addTarget(self, action: #selector(self.submitButtonTouched(sender:)), for: .touchUpInside)
     return button
   }()
+  
+  
   
   fileprivate lazy var containerView:UIView = {
     let _containerView = UIView()
@@ -52,23 +77,27 @@ class YPFilterView: UIView
   
   fileprivate lazy var shadowView:UIView = {
     let _shadowView = UIView()
-    _shadowView.backgroundColor = UIColor.colorWithHex(hex: 0x000000, alpha: 0.15)
+    _shadowView.backgroundColor = UIColor.colorWithHex(hex: 0x000000)
+    _shadowView.alpha = 0
     return _shadowView
   }()
   
   fileprivate lazy var collectionView:UICollectionView = {
     let layout = UICollectionViewFlowLayout()
-    let itemSizeWidth = 125
-    let itemSizeHeight = 100
+    let itemSizeWidth = (ScreenWidth - 40 - 36 - 10) * 0.5
+    let itemSizeHeight:CGFloat = 44.0
     layout.itemSize = CGSize(width: itemSizeWidth, height: itemSizeHeight)
-    layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 0
-    layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    layout.headerReferenceSize = CGSize(width: ScreenWidth, height: 44)
+    layout.minimumInteritemSpacing = 10
+    layout.minimumLineSpacing = 10
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
     
-    let frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 200)
+    let frame = CGRect(x: 0, y: 0, width: ScreenWidth - 40, height: ScreenHeight)
     let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
     collectionView.register(NSClassFromString("PropertyExchange.YPFilterCollectionViewCell"), forCellWithReuseIdentifier: "PropertyExchange.YPFilterCollectionViewCell")
+    collectionView.register(YPFilterCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: YPFilterCollectionHeaderView.className())
     collectionView.dataSource = self
+    collectionView.delegate = self
     collectionView.backgroundColor = UIColor.colorWithHex(hex: 0xFFFFFF)
     return collectionView
   }()
@@ -83,7 +112,20 @@ class YPFilterView: UIView
   
   fileprivate func createLayoutConstains(){
     
+    self.containerView.frame = CGRect(x: self.frame.width, y: 0, width: self.frame.width - 40, height: self.frame.height)
     
+    self.shadowView.snp.makeConstraints { (make) in
+      make.edges.equalTo(self)
+    }
+    
+    self.collectionView.snp.makeConstraints { (make) in
+      make.edges.equalTo(self.containerView).inset(UIEdgeInsetsMake(20, 0, 0, 0))
+    }
+    
+    self.submitButton.snp.makeConstraints { (make) in
+      make.left.bottom.right.equalTo(self.containerView)
+      make.height.equalTo(50)
+    }
     
   }
   
@@ -94,10 +136,54 @@ class YPFilterView: UIView
     self.createLayoutConstains()
   }
   
+  fileprivate var isDisplay:Bool = false
+  
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
+  public func show(){
+    
+    if isDisplay == false{
+      let appDelegate = UIApplication.shared.delegate as? AppDelegate
+      appDelegate?.window.bringSubview(toFront: self)
+      
+      UIView.animate(withDuration: 0.3) {
+        self.containerView.transform = CGAffineTransform(translationX: -self.containerView.frame.width, y: 0);
+        self.shadowView.alpha = 0.3
+      }
+      isDisplay = true
+    }
+    
+  }
   
+  public func hide(){
+    
+    if isDisplay{
+      UIView.animate(withDuration: 0.3, animations: {
+        self.containerView.transform = CGAffineTransform.identity
+        self.shadowView.alpha = 0.0
+        }, completion: { (finish) in
+          if finish{
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.window.sendSubview(toBack: self)
+          }
+      })
+      isDisplay = false
+    }
+    
+  }
+  
+  public func toggleDisplay(){
+    if isDisplay{
+      self.hide()
+    }else{
+      self.show()
+    }
+  }
+  
+  @objc private func submitButtonTouched(sender:UIButton){
+    self.toggleDisplay()
+  }
 
 }

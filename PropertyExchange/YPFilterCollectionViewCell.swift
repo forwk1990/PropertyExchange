@@ -27,8 +27,10 @@ class YPFilterCollectionViewCell: UICollectionViewCell {
   fileprivate lazy var filterItemLabel:UILabel = {
     let _label = UILabel()
     _label.textColor = UIColor.colorWithHex(hex: 0x999999)
-    self.filterItemLabel.layer.borderColor = UIColor.colorWithHex(hex: 0x39404D).cgColor
+    _label.backgroundColor = UIColor.colorWithHex(hex: 0xF5F5F5)
+    _label.layer.borderColor = UIColor.colorWithHex(hex: 0x39404D).cgColor
     _label.font = UIFont.systemFont(ofSize: 14)
+    _label.textAlignment = .center
     return _label
   }()
   

@@ -137,7 +137,7 @@ class YPProjectInverstmentTableViewCell: UITableViewCell {
       }
       
       self.typeCategoryLabel.text = _model.payingWay
-      self.totalMoneyLabel.text = "¥ \(_model.totalMoney)"
+      self.totalMoneyLabel.text = "¥ \(String.decimalString(from: Float(_model.totalMoney)))"
       self.rateLabel.text = "\(_model.rate)%"
       self.deadlineLabel.text = _model.deadline
       self.remainLabel.text = "¥\(_model.remainMoney)"

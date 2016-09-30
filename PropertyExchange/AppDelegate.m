@@ -10,9 +10,11 @@
 #import "PropertyExchange-Swift.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import "MMDrawerController.h"
+
 
 @interface AppDelegate ()
+
+
 
 @end
 
@@ -24,10 +26,11 @@
   YPHomeTableViewController *centerViewController = [[YPHomeTableViewController alloc] init];
   UINavigationController *navigationCenterViewController = [[UINavigationController alloc] initWithRootViewController:centerViewController];
   
-  UIViewController *leftViewController = [UIViewController new];
-  leftViewController.view.backgroundColor = [UIColor blueColor];
+  YPProfileViewController *leftViewController = [[YPProfileViewController alloc] init];
+  UINavigationController *navigationLeftViewController = [[UINavigationController alloc] initWithRootViewController:leftViewController];
   
-  MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationCenterViewController leftDrawerViewController:leftViewController];
+  MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationCenterViewController leftDrawerViewController:navigationLeftViewController];
+  self.drawerController = drawerController;
   [drawerController setShowsShadow:NO];
   [drawerController setMaximumLeftDrawerWidth:(CGRectGetWidth([UIScreen mainScreen].bounds) - 40)];
   [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];

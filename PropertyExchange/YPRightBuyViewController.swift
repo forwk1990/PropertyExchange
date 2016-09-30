@@ -10,18 +10,18 @@ import UIKit
 import SwiftyJSON
 
 
-extension YPProjectInverstmentViewController:YPNetworkManagerDelegate
+extension YPRightBuyViewController:YPNetworkManagerDelegate
 {
   @available(iOS 2.0, *)
   public func networkManager(_ manager: YPNetworkManager!, successResponseObject responseObject: NSObject!) {
     guard let _responseObject = responseObject else {return}
     guard let code = JSON.init(_responseObject).dictionary?["Code"] , code == 0 else{return}
     guard let data = JSON.init(_responseObject).dictionary?["Data"] else{return}
-    self.models = YPProjectInverstmentCellModel.models(json: data)
+    self.models = YPRightBuyTableViewCellModel.models(json: data)
   }
-
+  
   func requestUrl() -> String! {
-    return "project_inverstment_list"
+    return "right_buy_list"
   }
   
   func parameters() -> [String : Any]! {
@@ -34,7 +34,7 @@ extension YPProjectInverstmentViewController:YPNetworkManagerDelegate
   }
 }
 
-extension YPProjectInverstmentViewController:UITableViewDataSource
+extension YPRightBuyViewController:UITableViewDataSource
 {
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,22 +42,21 @@ extension YPProjectInverstmentViewController:UITableViewDataSource
   }
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let commentCell = YPProjectInverstmentTableViewCell.cell(withTableView: tableView, forReuseIdentifier: YPProjectInverstmentViewController.className()) as! YPProjectInverstmentTableViewCell
+    let commentCell = YPRightBuyTableViewCell.cell(withTableView: tableView, forReuseIdentifier: YPRightBuyViewController.className()) as! YPRightBuyTableViewCell
     commentCell.model = self.models![indexPath.row]
     return commentCell
   }
   
 }
 
-class YPProjectInverstmentViewController: UIViewController {
+class YPRightBuyViewController: UIViewController {
   
   private lazy var segementControl:YPOrderSegementControl = {
     var segementItems = [(title:String,status:YPOrderSegementItemOrderStatus)]()
     segementItems.append((title:"综合",status:.none))
-    segementItems.append((title:"利率",status:.ascending))
-    segementItems.append((title:"期限",status:.ascending))
-    segementItems.append((title:"金额",status:.ascending))
-    segementItems.append((title:"进度",status:.ascending))
+    segementItems.append((title:"到期净收益率",status:.ascending))
+    segementItems.append((title:"剩余期数",status:.ascending))
+    
     let _segementControl = YPOrderSegementControl()
     _segementControl.backgroundColor = UIColor.colorWithHex(hex: 0xF5F5F5)
     _segementControl.selectedBackgroundColor = UIColor.colorWithHex(hex: 0xF5F5F5)
@@ -78,7 +77,7 @@ class YPProjectInverstmentViewController: UIViewController {
   private lazy var tableView: UITableView = {
     var tableView = UITableView(frame: CGRect(x: 0, y: 44, width: ScreenWidth, height: ScreenHeight - 64 - 44))
     tableView.register(YPProjectInverstmentTableViewCell.self, forCellReuseIdentifier: YPProjectInverstmentViewController.className())
-    tableView.rowHeight = 120
+    tableView.rowHeight = 153
     tableView.allowsSelection = false
     tableView.separatorStyle = .singleLine
     //tableView.delegate = self
@@ -90,7 +89,7 @@ class YPProjectInverstmentViewController: UIViewController {
     return tableView
   }()
   
-  fileprivate var models:[YPProjectInverstmentCellModel]?{
+  fileprivate var models:[YPRightBuyTableViewCellModel]?{
     didSet{
       guard let _models = self.models , _models.count > 0 else{return}
       self.tableView.reloadData()
@@ -104,12 +103,10 @@ class YPProjectInverstmentViewController: UIViewController {
     
     self.view.addSubview(self.segementControl)
     self.view.addSubview(self.tableView)
-    //self.view.addSubview(self.filterView)
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     appDelegate?.window.addSubview(self.filterView)
     appDelegate?.window.sendSubview(toBack: self.filterView)
-    
     
     self.networkManager.delegate = self
     self.networkManager.sendRequest()

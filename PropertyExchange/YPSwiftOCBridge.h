@@ -10,5 +10,7 @@
 #define YPSwiftOCBridge_h
 
 #import "CircleProgressBar.h"
+#import "NSString+DecimalFormat.h"
+#import "AppDelegate.h"
 
 #endif /* YPSwiftOCBridge_h */

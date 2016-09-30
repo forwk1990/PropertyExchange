@@ -1,0 +1,100 @@
+{
+  "Code": 0,
+  "Msg": "",
+  "Data": [
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 15.30,
+      "originDeadline": "12 个月",
+      "isSuggest":1
+    },
+    {
+      "title": "安徽车易贷",
+      "totalMoney": 3000000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "originTotalMoney": 6000000,
+      "originRate": 11.30,
+      "originDeadline": "24 个月",
+      "isSuggest":1
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月",
+      "isSuggest":1
+    },
+    {
+      "title": "安徽车易贷",
+      "totalMoney": 3000000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "originTotalMoney": 6000000,
+      "originRate": 11.30,
+      "originDeadline": "24 个月",
+      "isSuggest":1
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 130944543,
+      "rate": 11.30,
+      "deadline": "6 个月",
+      "originTotalMoney": 130944543,
+      "originRate": 11.30,
+      "originDeadline": "12 个月"
+    }
+  ]
+}
