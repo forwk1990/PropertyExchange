@@ -47,6 +47,12 @@ class YPOrderSegementItem:UIView{
     self.createLayoutSubviews()
   }
   
+  public var isSelected:Bool = false{
+    didSet{
+      
+    }
+  }
+  
   func createSubviews(){
     self.addSubview(self.titleLabel)
     self.addSubview(self.upImageView)

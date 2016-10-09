@@ -67,8 +67,6 @@ class YPFilterView: UIView
     return button
   }()
   
-  
-  
   fileprivate lazy var containerView:UIView = {
     let _containerView = UIView()
     _containerView.backgroundColor = UIColor.white
@@ -79,6 +77,10 @@ class YPFilterView: UIView
     let _shadowView = UIView()
     _shadowView.backgroundColor = UIColor.colorWithHex(hex: 0x000000)
     _shadowView.alpha = 0
+    _shadowView.isUserInteractionEnabled = true
+    _shadowView.addGestureRecognizer(UITapGestureRecognizer(actionBlock: { (recognizer) in
+      self.toggleDisplay()
+    }))
     return _shadowView
   }()
   

@@ -19,12 +19,15 @@
 		0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */; };
 		0B43126B1D9BBE7C007AF496 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126A1D9BBE7C007AF496 /* Constant.swift */; };
 		0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */; };
+		0B84B8461DAA1B03006B9157 /* YPProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */; };
+		0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */; };
 		0B85494C1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B85494B1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift */; };
 		0B85494F1D9E0CE700DD4EDA /* YPRightBuyTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B85494E1D9E0CE700DD4EDA /* YPRightBuyTableViewCellModel.swift */; };
 		0B8549511D9E0EC600DD4EDA /* YPRightBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8549501D9E0EC600DD4EDA /* YPRightBuyViewController.swift */; };
 		0B8549541D9E0FEA00DD4EDA /* right_buy_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B8549531D9E0FEA00DD4EDA /* right_buy_list.json */; };
 		0B8549571D9E182600DD4EDA /* NSString+DecimalFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8549561D9E182600DD4EDA /* NSString+DecimalFormat.m */; };
 		0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8549581D9E18B500DD4EDA /* StringExtensions.swift */; };
+		0B9D17131DA8A30E00C04955 /* YPTranslationTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */; };
 		0BA8FC501D9B65DE0050BD61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC4F1D9B65DE0050BD61 /* main.m */; };
 		0BA8FC531D9B65DE0050BD61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC521D9B65DE0050BD61 /* AppDelegate.m */; };
 		0BA8FC561D9B65DE0050BD61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC551D9B65DE0050BD61 /* ViewController.m */; };
@@ -83,6 +86,8 @@
 		0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProfileViewController.swift; sourceTree = "<group>"; };
 		0B43126A1D9BBE7C007AF496 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectDetailViewController.swift; sourceTree = "<group>"; };
+		0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectDetailHeaderView.swift; sourceTree = "<group>"; };
 		0B85494B1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPRightBuyTableViewCell.swift; sourceTree = "<group>"; };
 		0B85494E1D9E0CE700DD4EDA /* YPRightBuyTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPRightBuyTableViewCellModel.swift; sourceTree = "<group>"; };
 		0B8549501D9E0EC600DD4EDA /* YPRightBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPRightBuyViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +95,8 @@
 		0B8549551D9E182600DD4EDA /* NSString+DecimalFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecimalFormat.h"; sourceTree = "<group>"; };
 		0B8549561D9E182600DD4EDA /* NSString+DecimalFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecimalFormat.m"; sourceTree = "<group>"; };
 		0B8549581D9E18B500DD4EDA /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		0B9D17111DA8A30E00C04955 /* YPTranslationTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YPTranslationTransitionAnimator.h; path = YPTransitionAnimator/YPTranslationTransitionAnimator.h; sourceTree = "<group>"; };
+		0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YPTranslationTransitionAnimator.m; path = YPTransitionAnimator/YPTranslationTransitionAnimator.m; sourceTree = "<group>"; };
 		0BA8FC4B1D9B65DE0050BD61 /* PropertyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA8FC4F1D9B65DE0050BD61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0BA8FC511D9B65DE0050BD61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -249,6 +256,31 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0B84B8411DAA1AC7006B9157 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0B84B8431DAA1AD7006B9157 /* View */,
+				0B84B8421DAA1AD1006B9157 /* Controller */,
+			);
+			name = ProjectDetail;
+			sourceTree = "<group>";
+		};
+		0B84B8421DAA1AD1006B9157 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0B84B8431DAA1AD7006B9157 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		0B8549491D9E020000DD4EDA /* RightBuy */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +313,15 @@
 				0B8549501D9E0EC600DD4EDA /* YPRightBuyViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		0B9D17101DA8A18400C04955 /* TransitionAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0B9D17111DA8A30E00C04955 /* YPTranslationTransitionAnimator.h */,
+				0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */,
+			);
+			name = TransitionAnimation;
 			sourceTree = "<group>";
 		};
 		0BA8FC421D9B65DE0050BD61 = {
@@ -373,6 +414,7 @@
 		0BAF6FFD1D9B706200E8E22F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0B84B8411DAA1AC7006B9157 /* ProjectDetail */,
 				0B32BD391D9E4BB100543376 /* User */,
 				0B8549491D9E020000DD4EDA /* RightBuy */,
 				0B0DEC561D9CA514008233D4 /* ProjectInvestment */,
@@ -395,6 +437,7 @@
 		0BAF70011D9B72F900E8E22F /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0B9D17101DA8A18400C04955 /* TransitionAnimation */,
 				0B0DEC671D9D08D2008233D4 /* CircleProgressBar */,
 				0BAF70191D9B733600E8E22F /* YPMembership */,
 				0BAF70021D9B732A00E8E22F /* YPNetwork */,
@@ -721,6 +764,7 @@
 				0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */,
 				0BAF70141D9B732A00E8E22F /* YPHttpRequestProxy.m in Sources */,
 				0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */,
+				0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */,
 				0BAF702F1D9B9F1700E8E22F /* YPUIViewController.m in Sources */,
 				0B0DEC6E1D9D1595008233D4 /* YPFilterCollectionViewCell.swift in Sources */,
 				0BAF703F1D9BB04100E8E22F /* YPHomeTableViewCell.swift in Sources */,
@@ -728,12 +772,14 @@
 				0BAF70181D9B732A00E8E22F /* YPNetworkResponse.m in Sources */,
 				0B0DEC5A1D9CA5B5008233D4 /* YPOrderSegementControl.swift in Sources */,
 				0B85494C1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift in Sources */,
+				0B84B8461DAA1B03006B9157 /* YPProjectDetailViewController.swift in Sources */,
 				0B43126B1D9BBE7C007AF496 /* Constant.swift in Sources */,
 				0B8549571D9E182600DD4EDA /* NSString+DecimalFormat.m in Sources */,
 				0BAF70171D9B732A00E8E22F /* YPNetworkManager.m in Sources */,
 				0B8549511D9E0EC600DD4EDA /* YPRightBuyViewController.swift in Sources */,
 				0BAF70421D9BB0E900E8E22F /* UIColor.swift in Sources */,
 				0B0DEC611D9CE888008233D4 /* YPProjectInverstmentCellModel.swift in Sources */,
+				0B9D17131DA8A30E00C04955 /* YPTranslationTransitionAnimator.m in Sources */,
 				0BAF70261D9B733600E8E22F /* YPMembershipCacheItem.m in Sources */,
 				0B0DEC5E1D9CC180008233D4 /* YPProjectInverstmentTableViewCell.swift in Sources */,
 				0BAF70281D9B733600E8E22F /* YPMembershipUser.m in Sources */,

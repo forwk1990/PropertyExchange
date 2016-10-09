@@ -35,7 +35,7 @@
   if(_usTitleLabel == nil){
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = NSTextAlignmentLeft;
-    label.text = @"Property Rights Exchange Center";
+    label.text = @"Assets Exchange Center";
     label.font = [UIFont systemFontOfSize:12];
     label.textColor = [UIColor colorWithRGB:0xFFFFFF];
     _usTitleLabel = label;
