@@ -17,6 +17,9 @@
 		0B0DEC6E1D9D1595008233D4 /* YPFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DEC6D1D9D1595008233D4 /* YPFilterCollectionViewCell.swift */; };
 		0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */; };
 		0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */; };
+		0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */; };
+		0B3A3B071DAB6E9500A25ACA /* YPBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3B061DAB6E9500A25ACA /* YPBankTableViewCell.swift */; };
+		0B3A3B0B1DAB944C00A25ACA /* YPSegementControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3B0A1DAB944C00A25ACA /* YPSegementControl.m */; };
 		0B43126B1D9BBE7C007AF496 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126A1D9BBE7C007AF496 /* Constant.swift */; };
 		0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */; };
 		0B84B8461DAA1B03006B9157 /* YPProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */; };
@@ -51,6 +54,7 @@
 		0BAF703F1D9BB04100E8E22F /* YPHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF703E1D9BB04100E8E22F /* YPHomeTableViewCell.swift */; };
 		0BAF70421D9BB0E900E8E22F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF70411D9BB0E900E8E22F /* UIColor.swift */; };
 		0BAF70481D9BB7B500E8E22F /* YPHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF70471D9BB7B500E8E22F /* YPHomeTableViewController.swift */; };
+		0BB1A23F1DAB9E70002394CC /* YPSegementCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1A23E1DAB9E70002394CC /* YPSegementCollectionViewCell.m */; };
 		D3914B43CF8A6DE542659DB6 /* Pods_PropertyExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6E600A300D74AAB5089F9E /* Pods_PropertyExchange.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		0B0DEC6D1D9D1595008233D4 /* YPFilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterCollectionHeaderView.swift; sourceTree = "<group>"; };
 		0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProfileViewController.swift; sourceTree = "<group>"; };
+		0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectMoneyView.swift; sourceTree = "<group>"; };
+		0B3A3B061DAB6E9500A25ACA /* YPBankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPBankTableViewCell.swift; sourceTree = "<group>"; };
+		0B3A3B091DAB944C00A25ACA /* YPSegementControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPSegementControl.h; sourceTree = "<group>"; };
+		0B3A3B0A1DAB944C00A25ACA /* YPSegementControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSegementControl.m; sourceTree = "<group>"; };
 		0B43126A1D9BBE7C007AF496 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectDetailViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 		0BAF703E1D9BB04100E8E22F /* YPHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeTableViewCell.swift; sourceTree = "<group>"; };
 		0BAF70411D9BB0E900E8E22F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0BAF70471D9BB7B500E8E22F /* YPHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeTableViewController.swift; sourceTree = "<group>"; };
+		0BB1A23D1DAB9E70002394CC /* YPSegementCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPSegementCollectionViewCell.h; sourceTree = "<group>"; };
+		0BB1A23E1DAB9E70002394CC /* YPSegementCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSegementCollectionViewCell.m; sourceTree = "<group>"; };
 		5F6E600A300D74AAB5089F9E /* Pods_PropertyExchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyExchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAB9C128D46A40107F206E0 /* Pods-PropertyExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyExchange/Pods-PropertyExchange.release.xcconfig"; sourceTree = "<group>"; };
 		EBDC78CF8873168C415EAD2A /* Pods-PropertyExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyExchange/Pods-PropertyExchange.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +266,17 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0B3A3B081DAB934200A25ACA /* YPSegementControl */ = {
+			isa = PBXGroup;
+			children = (
+				0B3A3B091DAB944C00A25ACA /* YPSegementControl.h */,
+				0B3A3B0A1DAB944C00A25ACA /* YPSegementControl.m */,
+				0BB1A23D1DAB9E70002394CC /* YPSegementCollectionViewCell.h */,
+				0BB1A23E1DAB9E70002394CC /* YPSegementCollectionViewCell.m */,
+			);
+			path = YPSegementControl;
+			sourceTree = "<group>";
+		};
 		0B84B8411DAA1AC7006B9157 /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */,
+				0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */,
+				0B3A3B061DAB6E9500A25ACA /* YPBankTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -437,6 +460,7 @@
 		0BAF70011D9B72F900E8E22F /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0B3A3B081DAB934200A25ACA /* YPSegementControl */,
 				0B9D17101DA8A18400C04955 /* TransitionAnimation */,
 				0B0DEC671D9D08D2008233D4 /* CircleProgressBar */,
 				0BAF70191D9B733600E8E22F /* YPMembership */,
@@ -766,6 +790,7 @@
 				0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */,
 				0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */,
 				0BAF702F1D9B9F1700E8E22F /* YPUIViewController.m in Sources */,
+				0B3A3B0B1DAB944C00A25ACA /* YPSegementControl.m in Sources */,
 				0B0DEC6E1D9D1595008233D4 /* YPFilterCollectionViewCell.swift in Sources */,
 				0BAF703F1D9BB04100E8E22F /* YPHomeTableViewCell.swift in Sources */,
 				0B0DEC6C1D9D14B7008233D4 /* YPFilterView.swift in Sources */,
@@ -784,15 +809,18 @@
 				0B0DEC5E1D9CC180008233D4 /* YPProjectInverstmentTableViewCell.swift in Sources */,
 				0BAF70281D9B733600E8E22F /* YPMembershipUser.m in Sources */,
 				0B0DEC5C1D9CB1DD008233D4 /* YPProjectInverstmentViewController.swift in Sources */,
+				0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */,
 				0BAF703B1D9BA15A00E8E22F /* YPHomeHeaderView.m in Sources */,
 				0BAF70161D9B732A00E8E22F /* YPNetworkConfiguration.m in Sources */,
 				0BAF70131D9B732A00E8E22F /* NSString+YPNetwork.m in Sources */,
 				0BAF70241D9B733600E8E22F /* NSDate+UTC.m in Sources */,
 				0BAF70481D9BB7B500E8E22F /* YPHomeTableViewController.swift in Sources */,
 				0BA8FC531D9B65DE0050BD61 /* AppDelegate.m in Sources */,
+				0B3A3B071DAB6E9500A25ACA /* YPBankTableViewCell.swift in Sources */,
 				0BAF70271D9B733600E8E22F /* YPMembershipProvider.m in Sources */,
 				0BA8FC501D9B65DE0050BD61 /* main.m in Sources */,
 				0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */,
+				0BB1A23F1DAB9E70002394CC /* YPSegementCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

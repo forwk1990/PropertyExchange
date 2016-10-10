@@ -59,6 +59,7 @@
   [self addSubview:self.zhTitleLabel];
   [self addSubview:self.usTitleLabel];
   [self addSubview:self.totalMoneyLabel];
+  
 }
 
 - (void)createLayoutConstrains{

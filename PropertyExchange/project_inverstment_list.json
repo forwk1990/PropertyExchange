@@ -4,65 +4,94 @@
   "Data": [
     {
       "title": "海峡车易贷",
+      "totalMoney": 800000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "remainMoney": 400000,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 800000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "remainMoney": 600000,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 100000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "remainMoney": 80000,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
+    },
+    {
+      "title": "海峡车易贷",
+      "totalMoney": 20000,
+      "rate": 11.30,
+      "deadline": "12 个月",
+      "remainMoney": 10000,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
+    },
+    {
+      "title": "海峡车易贷",
       "totalMoney": 130944543,
       "rate": 11.30,
       "deadline": "12 个月",
       "remainMoney": 100944543,
       "payingWay": "按月到期还款",
-      "isSuggest":1
-    },
-    {
-      "title": "光谷天桥棋手贷",
-      "totalMoney": 50000,
-      "rate": 9.30,
-      "deadline": "1 个月",
-      "remainMoney": 40000,
-      "payingWay": "按天计息到期还款",
-      "isSuggest":0
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
     },
     {
       "title": "海峡车易贷",
       "totalMoney": 130944543,
       "rate": 11.30,
       "deadline": "12 个月",
-      "remainMoney": 3259874,
-           "payingWay": "按月到期还款",
-           "isSuggest":1
+      "remainMoney": 100944543,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
     },
     {
       "title": "海峡车易贷",
       "totalMoney": 130944543,
       "rate": 11.30,
       "deadline": "12 个月",
-      "remainMoney": 3259874,
-           "payingWay": "按月到期还款",
-           "isSuggest":1
-    },
-    {
-      "title": "海峡车易贷",
-      "totalMoney": 130944543,
-      "rate": 11.30,
-      "deadline": "12 个月",
-      "remainMoney": 3259874,
-           "payingWay": "按月到期还款",
-           "isSuggest":1
-    },
-    {
-      "title": "海峡车易贷",
-      "totalMoney": 130944543,
-      "rate": 11.30,
-      "deadline": "12 个月",
-      "remainMoney": 3259874,
-           "payingWay": "按月到期还款",
-           "isSuggest":1
-    },
-    {
-      "title": "海峡车易贷",
-      "totalMoney": 130944543,
-      "rate": 11.30,
-      "deadline": "12 个月",
-      "remainMoney": 3259874,
-      "payingWay": "按月到期还款"
+      "remainMoney": 100944543,
+      "payingWay": "按月到期还款",
+      "isSuggest": 1,
+      "min": 50,
+      "max": 3250,
+      "borrower": "万先生",
+      "borrowerDate": ""
     }
   ]
 }

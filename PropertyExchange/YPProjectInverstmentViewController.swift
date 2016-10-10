@@ -34,7 +34,7 @@ extension YPProjectInverstmentViewController:YPNetworkManagerDelegate
   }
 }
 
-extension YPProjectInverstmentViewController:UITableViewDataSource
+extension YPProjectInverstmentViewController:UITableViewDataSource,UITableViewDelegate
 {
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,8 +43,19 @@ extension YPProjectInverstmentViewController:UITableViewDataSource
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let commentCell = YPProjectInverstmentTableViewCell.cell(withTableView: tableView, forReuseIdentifier: YPProjectInverstmentViewController.className()) as! YPProjectInverstmentTableViewCell
-    commentCell.model = self.models![indexPath.row]
+    commentCell.selectionStyle = .none
     return commentCell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let detailController = YPProjectDetailViewController()
+    detailController.model = self.models?[indexPath.row]
+    self.navigationController?.pushViewController(detailController, animated: true)
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let commentCell:YPProjectInverstmentTableViewCell = cell as! YPProjectInverstmentTableViewCell
+    commentCell.model = self.models![indexPath.row]
   }
   
 }
@@ -79,9 +90,9 @@ class YPProjectInverstmentViewController: UIViewController {
     var tableView = UITableView(frame: CGRect(x: 0, y: 44, width: ScreenWidth, height: ScreenHeight - 64 - 44))
     tableView.register(YPProjectInverstmentTableViewCell.self, forCellReuseIdentifier: YPProjectInverstmentViewController.className())
     tableView.rowHeight = 120
-    tableView.allowsSelection = false
+    tableView.allowsSelection = true
     tableView.separatorStyle = .singleLine
-    //tableView.delegate = self
+    tableView.delegate = self
     tableView.dataSource = self
     tableView.backgroundColor = UIColor.colorWithHex(hex: 0xF3F3F3)
     tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 0.01))
@@ -116,12 +127,23 @@ class YPProjectInverstmentViewController: UIViewController {
     
   }
   
-  private func setNavigationBar(){
-    self.view.backgroundColor = UIColor.colorWithHex(hex: 0xFFFFFF)
-    self.title = "项目投资"
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.setNavigationBarStyle()
+  }
+  
+  private func setNavigationBarStyle(){
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(color:UIColor.white), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage(color: UIColor.colorWithHex(hex: 0xDCDCDC))
     self.navigationController?.navigationBar.backgroundColor = UIColor.white
+  }
+  
+  private func setNavigationBar(){
+    self.setNavigationBarStyle()
+    
+    self.view.backgroundColor = UIColor.colorWithHex(hex: 0xFFFFFF)
+    self.title = "项目投资"
     
     let backButton = UIButton(type: .custom)
     backButton.addTarget(self, action:#selector(self.backButtonTouched(sender:)), for: .touchUpInside)

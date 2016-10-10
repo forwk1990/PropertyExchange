@@ -19,6 +19,10 @@ public struct YPProjectInverstmentCellModel
   public var deadline:String?
   public var remainMoney:Double = 0
   public var payingWay:String?
+  public var min:Double = 0
+  public var max:Double = 0
+  public var borrower:String? = ""
+  public var borrowerDate:String? = ""
   
   public init(_ json: JSON){
     self.title = json.dictionary?["title"]?.stringValue
@@ -32,6 +36,10 @@ public struct YPProjectInverstmentCellModel
     self.deadline = json.dictionary?["deadline"]?.stringValue
     self.remainMoney = (json.dictionary?["remainMoney"]?.doubleValue)!
     self.payingWay = json.dictionary?["payingWay"]?.stringValue
+    self.min = (json.dictionary?["min"]?.doubleValue)!
+    self.max = (json.dictionary?["max"]?.doubleValue)!
+    self.borrower = json.dictionary?["borrower"]?.stringValue
+    self.borrowerDate = json.dictionary?["borrowerDate"]?.stringValue
   }
   
   public static func models(json: JSON) -> [YPProjectInverstmentCellModel]{
