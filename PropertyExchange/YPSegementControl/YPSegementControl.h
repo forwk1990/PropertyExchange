@@ -13,10 +13,15 @@
 @protocol YPSegementControlDelegate <NSObject>
 
 @optional
-- (void)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
+- (void)segementControl:(YPSegementControl *)segementControl willDisplayView:(UIView *)view atIndex:(NSUInteger)index;
+- (void)segementControl:(YPSegementControl *)segementControl didDisplayView:(UIView *)view atIndex:(NSUInteger)index;
+- (void)segementControl:(YPSegementControl *)segementControl didSelectItemAtIndex:(NSUInteger)index;
 
 @required
-- (void)segementControl:(YPSegementControl *)segementControl didSelectItemAtIndex:(NSUInteger)index;
+
+- (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl;
+- (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl;
+- (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
 
 @end
 
@@ -36,12 +41,10 @@
 
 @property (nonatomic, strong) UIColor *borderColor;
 @property (nonatomic, assign) CGFloat borderWidth;
-@property (nonatomic, assign) CGFloat contentCornerRadius;
-@property (nonatomic, assign) UIEdgeInsets contentInsets;
-@property (nonatomic, strong) UIColor *contentBackgroundColor;
+@property (nonatomic, assign) CGFloat containerCornerRadius;
+@property (nonatomic, assign) UIEdgeInsets containerInsets;
+@property (nonatomic, strong) UIColor *containerBackgroundColor;
 
 @property (nonatomic, weak) id<YPSegementControlDelegate> delegate;
-
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray<NSString *>*)titles;
 
 @end

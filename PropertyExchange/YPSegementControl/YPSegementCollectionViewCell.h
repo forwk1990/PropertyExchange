@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YPSegementCollectionViewCell : UIView
+@interface YPSegementCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) UIView *customView;
 
 @end

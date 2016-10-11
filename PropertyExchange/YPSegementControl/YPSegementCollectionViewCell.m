@@ -8,7 +8,22 @@
 
 #import "YPSegementCollectionViewCell.h"
 
+@interface YPSegementCollectionViewCell ()
+
+@end
+
 @implementation YPSegementCollectionViewCell
 
+- (void)setCustomView:(UIView *)customView{
+  [self.customView removeFromSuperview];
+  _customView = customView;
+  [self.contentView addSubview:customView];
+}
+
+- (void)layoutSubviews{
+  [super layoutSubviews];
+  
+  self.customView.frame = self.contentView.bounds;
+}
 
 @end

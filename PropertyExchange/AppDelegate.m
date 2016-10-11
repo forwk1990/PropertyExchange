@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PropertyExchange-Swift.h"
+#import "YPUIViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -39,8 +40,10 @@
   self.window = [[UIWindow alloc] init];
   self.window.frame = [UIScreen mainScreen].bounds;
   self.window.rootViewController = drawerController;
-  [self.window makeKeyAndVisible];
   
+  self.window.rootViewController = [[YPUIViewController alloc] init];
+  
+  [self.window makeKeyAndVisible];
   
   return YES;
 }

@@ -7,25 +7,27 @@
 //
 
 #import "YPUIViewController.h"
+#import "YPSegementControl.h"
 
-@interface YPUIViewController ()
-
-@property (nonatomic,weak) UILabel *label;
+@interface YPUIViewController () <YPSegementControlDelegate>
 
 @end
 
 @implementation YPUIViewController
 
-- (UILabel *)label{
-    if(_label == nil){
-        
-    }
-    return _label;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
+  self.view.backgroundColor = UIColorHex(0xFFFFFF);
+  
+  YPSegementControl *segementControl = [[YPSegementControl alloc] init];
+  segementControl.containerBackgroundColor = UIColorHex(0xcccccc);
+  segementControl.separatorColor = UIColorHex(0xffffff);
+  segementControl.backgroundColor = UIColorHex(0xcccccc);
+  segementControl.delegate = self;
+  segementControl.frame = CGRectMake(0, 100, 375, 50);
+  [self.view addSubview:segementControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,14 +35,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - YPSegementControlDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl{
+  return CGSizeMake(100, 50);
 }
-*/
+
+- (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl{
+  return 5;
+}
+
+- (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index{
+  UILabel *label = [[UILabel alloc] init];
+  label.text = @"哈佛";
+  label.textColor = UIColorHex(0x000000);
+  label.textAlignment = NSTextAlignmentCenter;
+  label.frame = CGRectMake(0, 0, 100, 50);
+  return label;
+}
 
 @end
