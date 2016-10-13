@@ -41,7 +41,7 @@
   self.window.frame = [UIScreen mainScreen].bounds;
   self.window.rootViewController = drawerController;
   
-  self.window.rootViewController = [[YPUIViewController alloc] init];
+//  self.window.rootViewController = [[YPUIViewController alloc] init];
   
   [self.window makeKeyAndVisible];
   

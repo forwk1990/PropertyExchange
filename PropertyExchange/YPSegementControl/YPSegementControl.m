@@ -131,21 +131,29 @@
   return _containerViewLayout;
 }
 
-- (void)setDelegate:(id<YPSegementControlDelegate>)delegate{
-  _delegate = delegate;
-  
-  // set total content width for calculate collectionview contentsize
-  NSUInteger numberOfItems = [self.delegate numberOfItemsIn:self];
-  CGSize sizeOfItem = [self.delegate sizeOfItemIn:self];
-  self.totalContentWidth = numberOfItems * sizeOfItem.width;
+- (void)setItemSize:(CGSize)itemSize{
+  _itemSize = itemSize;
   
   // set containerview layout item size
-  self.containerViewLayout.itemSize = sizeOfItem;
-  
+  self.containerViewLayout.itemSize = self.itemSize;
 }
 
 - (void)layoutSubviews{
   [super layoutSubviews];
+  
+  /**
+   if the item type is YPSegementControlItemTypeDefault, 
+   we can calculate the total content width by item size and the number of title array.
+   if not, the total content width is decided by the delegate.
+   So,the method of 'numberofItemsIn' is necessary。
+   */
+  if (self.itemType == YPSegementControlItemTypeDefault) {
+    self.totalContentWidth = self.titles.count * self.itemSize.width;
+  }else{
+    NSAssert([self.delegate respondsToSelector:@selector(numberOfItemsIn:)], @"You must implement the method 'numberOfItemsIn:' of delegate.");
+    NSUInteger numberOfItems = [self.delegate numberOfItemsIn:self];
+    self.totalContentWidth = numberOfItems * self.itemSize.width;
+  }
   
   CGFloat width = self.frame.size.width;
   CGFloat height = self.frame.size.height;
@@ -177,8 +185,7 @@
     cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YPSegementCollectionViewCell className] forIndexPath:indexPath];
     cell.customView = [self.delegate segementControl:self viewForItemAtIndex:indexPath.row];
   }
-  CGSize sizeOfItem = [self.delegate sizeOfItemIn:self];
-  cell.customView.frame = CGRectMake(0, 0, sizeOfItem.width, sizeOfItem.height);
+  cell.customView.frame = CGRectMake(0, 0, self.itemSize.width, self.itemSize.height);
   return cell;
 }
 

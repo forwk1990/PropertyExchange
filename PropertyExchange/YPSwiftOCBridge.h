@@ -11,6 +11,9 @@
 
 #import "CircleProgressBar.h"
 #import "NSString+DecimalFormat.h"
+#import "PCCircleView.h"
+#import "PCCircleViewConst.h"
+#import "PCLockLabel.h"
 #import "AppDelegate.h"
 
 #endif /* YPSwiftOCBridge_h */

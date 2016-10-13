@@ -15,6 +15,14 @@
 		0B0DEC6A1D9D08D2008233D4 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DEC691D9D08D2008233D4 /* CircleProgressBar.m */; };
 		0B0DEC6C1D9D14B7008233D4 /* YPFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DEC6B1D9D14B7008233D4 /* YPFilterView.swift */; };
 		0B0DEC6E1D9D1595008233D4 /* YPFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DEC6D1D9D1595008233D4 /* YPFilterCollectionViewCell.swift */; };
+		0B188FEC1DAF70AE00943D88 /* PCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FDF1DAF70AE00943D88 /* PCCircle.m */; };
+		0B188FED1DAF70AE00943D88 /* PCCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FE11DAF70AE00943D88 /* PCCircleView.m */; };
+		0B188FEE1DAF70AE00943D88 /* PCCircleViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FE31DAF70AE00943D88 /* PCCircleViewConst.m */; };
+		0B188FEF1DAF70AE00943D88 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FE61DAF70AE00943D88 /* CALayer+Anim.m */; };
+		0B188FF01DAF70AE00943D88 /* PCCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FE91DAF70AE00943D88 /* PCCircleInfoView.m */; };
+		0B188FF11DAF70AE00943D88 /* PCLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FEB1DAF70AE00943D88 /* PCLockLabel.m */; };
+		0B188FF31DAF720800943D88 /* YPGestureVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FF21DAF720800943D88 /* YPGestureVerifyViewController.swift */; };
+		0B188FF51DAF80B900943D88 /* userLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B188FF41DAF80B900943D88 /* userLogo.png */; };
 		0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */; };
 		0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */; };
 		0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */; };
@@ -89,6 +97,20 @@
 		0B0DEC691D9D08D2008233D4 /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
 		0B0DEC6B1D9D14B7008233D4 /* YPFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterView.swift; sourceTree = "<group>"; };
 		0B0DEC6D1D9D1595008233D4 /* YPFilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B188FDE1DAF70AE00943D88 /* PCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircle.h; sourceTree = "<group>"; };
+		0B188FDF1DAF70AE00943D88 /* PCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircle.m; sourceTree = "<group>"; };
+		0B188FE01DAF70AE00943D88 /* PCCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleView.h; sourceTree = "<group>"; };
+		0B188FE11DAF70AE00943D88 /* PCCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleView.m; sourceTree = "<group>"; };
+		0B188FE21DAF70AE00943D88 /* PCCircleViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleViewConst.h; sourceTree = "<group>"; };
+		0B188FE31DAF70AE00943D88 /* PCCircleViewConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleViewConst.m; sourceTree = "<group>"; };
+		0B188FE51DAF70AE00943D88 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
+		0B188FE61DAF70AE00943D88 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
+		0B188FE81DAF70AE00943D88 /* PCCircleInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleInfoView.h; sourceTree = "<group>"; };
+		0B188FE91DAF70AE00943D88 /* PCCircleInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleInfoView.m; sourceTree = "<group>"; };
+		0B188FEA1DAF70AE00943D88 /* PCLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLockLabel.h; sourceTree = "<group>"; };
+		0B188FEB1DAF70AE00943D88 /* PCLockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLockLabel.m; sourceTree = "<group>"; };
+		0B188FF21DAF720800943D88 /* YPGestureVerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPGestureVerifyViewController.swift; sourceTree = "<group>"; };
+		0B188FF41DAF80B900943D88 /* userLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userLogo.png; sourceTree = "<group>"; };
 		0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterCollectionHeaderView.swift; sourceTree = "<group>"; };
 		0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProfileViewController.swift; sourceTree = "<group>"; };
 		0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectMoneyView.swift; sourceTree = "<group>"; };
@@ -249,6 +271,49 @@
 				0B0DEC691D9D08D2008233D4 /* CircleProgressBar.m */,
 			);
 			path = CircleProgressBar;
+			sourceTree = "<group>";
+		};
+		0B188FDC1DAF709C00943D88 /* GestureUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				0B188FDD1DAF70AE00943D88 /* FrameWork */,
+				0B188FE41DAF70AE00943D88 /* Gategory */,
+				0B188FE71DAF70AE00943D88 /* View */,
+			);
+			path = GestureUnlock;
+			sourceTree = "<group>";
+		};
+		0B188FDD1DAF70AE00943D88 /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				0B188FDE1DAF70AE00943D88 /* PCCircle.h */,
+				0B188FDF1DAF70AE00943D88 /* PCCircle.m */,
+				0B188FE01DAF70AE00943D88 /* PCCircleView.h */,
+				0B188FE11DAF70AE00943D88 /* PCCircleView.m */,
+				0B188FE21DAF70AE00943D88 /* PCCircleViewConst.h */,
+				0B188FE31DAF70AE00943D88 /* PCCircleViewConst.m */,
+			);
+			path = FrameWork;
+			sourceTree = "<group>";
+		};
+		0B188FE41DAF70AE00943D88 /* Gategory */ = {
+			isa = PBXGroup;
+			children = (
+				0B188FE51DAF70AE00943D88 /* CALayer+Anim.h */,
+				0B188FE61DAF70AE00943D88 /* CALayer+Anim.m */,
+			);
+			path = Gategory;
+			sourceTree = "<group>";
+		};
+		0B188FE71DAF70AE00943D88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B188FE81DAF70AE00943D88 /* PCCircleInfoView.h */,
+				0B188FE91DAF70AE00943D88 /* PCCircleInfoView.m */,
+				0B188FEA1DAF70AE00943D88 /* PCLockLabel.h */,
+				0B188FEB1DAF70AE00943D88 /* PCLockLabel.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0B32BD391D9E4BB100543376 /* User */ = {
@@ -465,6 +530,7 @@
 		0BAF6FFE1D9B70B200E8E22F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0B188FF41DAF80B900943D88 /* userLogo.png */,
 				0B8549531D9E0FEA00DD4EDA /* right_buy_list.json */,
 				0B0DEC641D9CF7E3008233D4 /* project_inverstment_list.json */,
 				0BA8FC5A1D9B65DE0050BD61 /* Assets.xcassets */,
@@ -475,6 +541,7 @@
 		0BAF70011D9B72F900E8E22F /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0B188FDC1DAF709C00943D88 /* GestureUnlock */,
 				0B3A3B081DAB934200A25ACA /* YPSegementControl */,
 				0B9D17101DA8A18400C04955 /* TransitionAnimation */,
 				0B0DEC671D9D08D2008233D4 /* CircleProgressBar */,
@@ -553,6 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				0BAF70471D9BB7B500E8E22F /* YPHomeTableViewController.swift */,
+				0B188FF21DAF720800943D88 /* YPGestureVerifyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -708,6 +776,7 @@
 				0BA8FC5E1D9B65DE0050BD61 /* LaunchScreen.storyboard in Resources */,
 				0B0DEC651D9CF7E3008233D4 /* project_inverstment_list.json in Resources */,
 				0BA8FC5B1D9B65DE0050BD61 /* Assets.xcassets in Resources */,
+				0B188FF51DAF80B900943D88 /* userLogo.png in Resources */,
 				0B8549541D9E0FEA00DD4EDA /* right_buy_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,10 +868,12 @@
 				0B85494F1D9E0CE700DD4EDA /* YPRightBuyTableViewCellModel.swift in Sources */,
 				0B410D0A1DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m in Sources */,
 				0BA8FC561D9B65DE0050BD61 /* ViewController.m in Sources */,
+				0B188FEE1DAF70AE00943D88 /* PCCircleViewConst.m in Sources */,
 				0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */,
 				0B410D071DACCCE500046621 /* YPSegementCollectionViewLayout.m in Sources */,
 				0BAF70251D9B733600E8E22F /* YPMembership.m in Sources */,
 				0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */,
+				0B188FF31DAF720800943D88 /* YPGestureVerifyViewController.swift in Sources */,
 				0BAF70141D9B732A00E8E22F /* YPHttpRequestProxy.m in Sources */,
 				0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */,
 				0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */,
@@ -818,9 +889,11 @@
 				0B43126B1D9BBE7C007AF496 /* Constant.swift in Sources */,
 				0B8549571D9E182600DD4EDA /* NSString+DecimalFormat.m in Sources */,
 				0BAF70171D9B732A00E8E22F /* YPNetworkManager.m in Sources */,
+				0B188FF01DAF70AE00943D88 /* PCCircleInfoView.m in Sources */,
 				0B8549511D9E0EC600DD4EDA /* YPRightBuyViewController.swift in Sources */,
 				0BAF70421D9BB0E900E8E22F /* UIColor.swift in Sources */,
 				0B7198DF1DADEA88004C0891 /* YPSegementCollectionViewLabelCell.m in Sources */,
+				0B188FEF1DAF70AE00943D88 /* CALayer+Anim.m in Sources */,
 				0B0DEC611D9CE888008233D4 /* YPProjectInverstmentCellModel.swift in Sources */,
 				0B9D17131DA8A30E00C04955 /* YPTranslationTransitionAnimator.m in Sources */,
 				0BAF70261D9B733600E8E22F /* YPMembershipCacheItem.m in Sources */,
@@ -828,7 +901,9 @@
 				0BAF70281D9B733600E8E22F /* YPMembershipUser.m in Sources */,
 				0B0DEC5C1D9CB1DD008233D4 /* YPProjectInverstmentViewController.swift in Sources */,
 				0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */,
+				0B188FEC1DAF70AE00943D88 /* PCCircle.m in Sources */,
 				0BAF703B1D9BA15A00E8E22F /* YPHomeHeaderView.m in Sources */,
+				0B188FED1DAF70AE00943D88 /* PCCircleView.m in Sources */,
 				0BAF70161D9B732A00E8E22F /* YPNetworkConfiguration.m in Sources */,
 				0BAF70131D9B732A00E8E22F /* NSString+YPNetwork.m in Sources */,
 				0BAF70241D9B733600E8E22F /* NSDate+UTC.m in Sources */,
@@ -839,6 +914,7 @@
 				0BA8FC501D9B65DE0050BD61 /* main.m in Sources */,
 				0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */,
 				0BB1A23F1DAB9E70002394CC /* YPSegementCollectionViewCell.m in Sources */,
+				0B188FF11DAF70AE00943D88 /* PCLockLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,11 +37,7 @@ typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
 - (void)segementControl:(YPSegementControl *)segementControl didDisplayView:(UIView *)view atIndex:(NSUInteger)index;
 - (void)segementControl:(YPSegementControl *)segementControl didSelectItemAtIndex:(NSUInteger)index;
 - (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
-
-@required
-
 - (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl;
-- (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl;
 
 @end
 
@@ -72,6 +68,7 @@ typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
  the default value is YPSegementControlItemTypeDefault.
  */
 @property (nonatomic, assign) YPSegementControlItemType itemType;
+@property (nonatomic, assign) CGSize itemSize;
 
 @property (nonatomic, weak) id<YPSegementControlDelegate> delegate;
 

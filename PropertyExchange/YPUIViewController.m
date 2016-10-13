@@ -23,6 +23,7 @@
   
   YPSegementControl *segementControl = [[YPSegementControl alloc] init];
   segementControl.titles = @[@"哈佛",@"牛津",@"武职"];
+  segementControl.itemSize = CGSizeMake(90, 50);
   segementControl.containerBackgroundColor = UIColorHex(0xcccccc);
   segementControl.separatorColor = UIColorHex(0xffffff);
   segementControl.separatorWidth = 0.5;
@@ -41,12 +42,5 @@
 
 #pragma mark - YPSegementControlDelegate
 
-- (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl{
-  return CGSizeMake(90, 50);
-}
-
-- (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl{
-  return 3;
-}
 
 @end
