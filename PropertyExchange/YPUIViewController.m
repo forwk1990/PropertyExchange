@@ -16,42 +16,37 @@
 @implementation YPUIViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
   
   self.view.backgroundColor = UIColorHex(0xFFFFFF);
   
   YPSegementControl *segementControl = [[YPSegementControl alloc] init];
+  segementControl.titles = @[@"哈佛",@"牛津",@"武职"];
   segementControl.containerBackgroundColor = UIColorHex(0xcccccc);
   segementControl.separatorColor = UIColorHex(0xffffff);
-  segementControl.backgroundColor = UIColorHex(0xcccccc);
+  segementControl.separatorWidth = 0.5;
+  segementControl.containerCornerRadius = 10;
   segementControl.delegate = self;
-  segementControl.frame = CGRectMake(0, 100, 375, 50);
+  segementControl.containerInsets = UIEdgeInsetsMake(10, 15, 10, 15);
+  segementControl.backgroundColor = UIColorHex(0x3B4F5E);
+  segementControl.frame = CGRectMake(0, 100, 300, 50);
   [self.view addSubview:segementControl];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - YPSegementControlDelegate
 
 - (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl{
-  return CGSizeMake(100, 50);
+  return CGSizeMake(90, 50);
 }
 
 - (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl{
-  return 5;
-}
-
-- (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index{
-  UILabel *label = [[UILabel alloc] init];
-  label.text = @"哈佛";
-  label.textColor = UIColorHex(0x000000);
-  label.textAlignment = NSTextAlignmentCenter;
-  label.frame = CGRectMake(0, 0, 100, 50);
-  return label;
+  return 3;
 }
 
 @end

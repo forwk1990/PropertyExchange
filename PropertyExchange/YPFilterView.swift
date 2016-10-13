@@ -25,7 +25,6 @@ extension YPFilterView:UICollectionViewDataSource
     return cell;
   }
   
-  
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
     if kind == UICollectionElementKindSectionHeader{

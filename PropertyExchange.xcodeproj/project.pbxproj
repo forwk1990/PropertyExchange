@@ -24,6 +24,7 @@
 		0B410D0A1DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B410D091DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m */; };
 		0B43126B1D9BBE7C007AF496 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126A1D9BBE7C007AF496 /* Constant.swift */; };
 		0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */; };
+		0B7198DF1DADEA88004C0891 /* YPSegementCollectionViewLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7198DE1DADEA87004C0891 /* YPSegementCollectionViewLabelCell.m */; };
 		0B84B8461DAA1B03006B9157 /* YPProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */; };
 		0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */; };
 		0B85494C1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B85494B1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift */; };
@@ -100,6 +101,8 @@
 		0B410D091DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSegementSeparatorSupplementaryView.m; sourceTree = "<group>"; };
 		0B43126A1D9BBE7C007AF496 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0B43126C1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B7198DD1DADEA87004C0891 /* YPSegementCollectionViewLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPSegementCollectionViewLabelCell.h; sourceTree = "<group>"; };
+		0B7198DE1DADEA87004C0891 /* YPSegementCollectionViewLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSegementCollectionViewLabelCell.m; sourceTree = "<group>"; };
 		0B84B8451DAA1B03006B9157 /* YPProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectDetailViewController.swift; sourceTree = "<group>"; };
 		0B84B8471DAA1B57006B9157 /* YPProjectDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectDetailHeaderView.swift; sourceTree = "<group>"; };
 		0B85494B1D9E023A00DD4EDA /* YPRightBuyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPRightBuyTableViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				0B410D061DACCCE500046621 /* YPSegementCollectionViewLayout.m */,
 				0B410D081DACDA1600046621 /* YPSegementSeparatorSupplementaryView.h */,
 				0B410D091DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m */,
+				0B7198DD1DADEA87004C0891 /* YPSegementCollectionViewLabelCell.h */,
+				0B7198DE1DADEA87004C0891 /* YPSegementCollectionViewLabelCell.m */,
 			);
 			path = YPSegementControl;
 			sourceTree = "<group>";
@@ -815,6 +820,7 @@
 				0BAF70171D9B732A00E8E22F /* YPNetworkManager.m in Sources */,
 				0B8549511D9E0EC600DD4EDA /* YPRightBuyViewController.swift in Sources */,
 				0BAF70421D9BB0E900E8E22F /* UIColor.swift in Sources */,
+				0B7198DF1DADEA88004C0891 /* YPSegementCollectionViewLabelCell.m in Sources */,
 				0B0DEC611D9CE888008233D4 /* YPProjectInverstmentCellModel.swift in Sources */,
 				0B9D17131DA8A30E00C04955 /* YPTranslationTransitionAnimator.m in Sources */,
 				0BAF70261D9B733600E8E22F /* YPMembershipCacheItem.m in Sources */,

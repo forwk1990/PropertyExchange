@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Decide how to represent the segement control item
+ */
+typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
+  /**
+   The segement control item is the type of colleciton view cell
+   which is actually a collection view cell contains only a label.
+   mostly use for a purely text.
+   */
+  YPSegementControlItemTypeDefault = 0,
+  /**
+   Strictly speaking! this is also a custom type. you must write a custom collection view cell。
+   */
+  YPSegementControlItemTypeCollectionViewCell = 1,
+  /**
+   A custom type,you can write a custom uiview.
+   */
+  YPSegementControlItemTypeCustom = 2
+};
+
 @class YPSegementControl;
 
 @protocol YPSegementControlDelegate <NSObject>
@@ -16,12 +36,12 @@
 - (void)segementControl:(YPSegementControl *)segementControl willDisplayView:(UIView *)view atIndex:(NSUInteger)index;
 - (void)segementControl:(YPSegementControl *)segementControl didDisplayView:(UIView *)view atIndex:(NSUInteger)index;
 - (void)segementControl:(YPSegementControl *)segementControl didSelectItemAtIndex:(NSUInteger)index;
+- (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
 
 @required
 
 - (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl;
 - (CGSize)sizeOfItemIn:(YPSegementControl *)segementControl;
-- (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
 
 @end
 
@@ -29,9 +49,12 @@
 
 @property (nonatomic, strong) UIColor *selectedTextColor;
 @property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic, assign) CGFloat selectedFontSize;
+@property (nonatomic, copy) NSArray<NSString *> *titles;
 
 @property (nonatomic, assign, getter=isSeparatorVisible) BOOL separatorVisible;
-@property (nonatomic, assign) UIColor *separatorColor;
+@property (nonatomic, strong) UIColor *separatorColor;
 @property (nonatomic, assign) CGFloat separatorWidth;
 @property (nonatomic, assign) UIEdgeInsets separatorInsets;
 
@@ -45,6 +68,12 @@
 @property (nonatomic, assign) UIEdgeInsets containerInsets;
 @property (nonatomic, strong) UIColor *containerBackgroundColor;
 
+/**
+ the default value is YPSegementControlItemTypeDefault.
+ */
+@property (nonatomic, assign) YPSegementControlItemType itemType;
+
 @property (nonatomic, weak) id<YPSegementControlDelegate> delegate;
+
 
 @end

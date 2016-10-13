@@ -11,6 +11,8 @@
 @interface YPSegementCollectionViewLayout ()
 
 @property (nonatomic,copy) NSDictionary<NSIndexPath*,UICollectionViewLayoutAttributes*> *layoutAttributesCacheForSupplementaryView;
+@property (nonatomic,copy) NSDictionary<NSIndexPath*,UICollectionViewLayoutAttributes*> *layoutAttributesDictionaryCache;
+@property (nonatomic,copy) NSArray<UICollectionViewLayoutAttributes *> *layoutAttributesArrayCache;
 
 @end
 
@@ -19,30 +21,47 @@
 - (void)prepareLayout{
   [super prepareLayout];
   
-  NSMutableDictionary *layoutAttributesForSupplementaryView = [NSMutableDictionary dictionary];
-  
-  NSUInteger numberOfSections = [self.collectionView numberOfSections];
-  for (NSUInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
-    NSUInteger numberOfItems = [self.collectionView numberOfItemsInSection:sectionIndex];
-    for (NSUInteger itemIndex = 0; itemIndex < numberOfItems; itemIndex++) {
-      NSIndexPath *indexPath = [NSIndexPath indexPathForItem:itemIndex inSection:sectionIndex];
-      UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:YPSegementCollectionElementKindSeparator atIndexPath:indexPath];
-      [layoutAttributesForSupplementaryView setObject:layoutAttributes forKey:indexPath];
-    }
+  // create cell layout attributes cache
+  if (self.layoutAttributesDictionaryCache == nil) {
+    NSMutableDictionary *layoutAttributesDictionary = [NSMutableDictionary dictionary];
+    NSArray<UICollectionViewLayoutAttributes *> *layoutAttributes = [NSMutableArray arrayWithArray:[super layoutAttributesForElementsInRect:CGRectMake(0, 0, self.collectionView.contentSize.width, self.collectionView.contentSize.height)]];
+    [layoutAttributes enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull attributes, NSUInteger idx, BOOL * _Nonnull stop) {
+      [layoutAttributesDictionary setObject:attributes forKey:attributes.indexPath];
+    }];
+    self.layoutAttributesArrayCache = layoutAttributes;
+    self.layoutAttributesDictionaryCache = layoutAttributesDictionary;
   }
   
-  self.layoutAttributesCacheForSupplementaryView = layoutAttributesForSupplementaryView;
+  // create supplementary view layout attributes cache
+  if (self.layoutAttributesCacheForSupplementaryView == nil) {
+    NSMutableDictionary *layoutAttributesForSupplementaryView = [NSMutableDictionary dictionary];
+    NSUInteger numberOfSections = [self.collectionView numberOfSections];
+    for (NSUInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
+      NSUInteger numberOfItems = [self.collectionView numberOfItemsInSection:sectionIndex];
+      for (NSUInteger itemIndex = 0; itemIndex < numberOfItems; itemIndex++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:itemIndex inSection:sectionIndex];
+        UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:YPSegementCollectionElementKindSeparator atIndexPath:indexPath];
+        [layoutAttributesForSupplementaryView setObject:layoutAttributes forKey:indexPath];
+      }
+    }
+    self.layoutAttributesCacheForSupplementaryView = layoutAttributesForSupplementaryView;
+    
+    // add the supplementary view layout attributes to the cell layout attributes cache
+    NSMutableArray *mutableArrayLayoutAttributes = [NSMutableArray arrayWithArray:self.layoutAttributesArrayCache];
+    NSMutableDictionary<NSIndexPath*,UICollectionViewLayoutAttributes*> *mutableDictionaryLayoutAttributes = [NSMutableDictionary dictionaryWithDictionary:self.layoutAttributesDictionaryCache];
+    [self.layoutAttributesCacheForSupplementaryView enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, UICollectionViewLayoutAttributes * _Nonnull obj, BOOL * _Nonnull stop) {
+      [mutableArrayLayoutAttributes addObject:obj];
+      [mutableDictionaryLayoutAttributes setObject:obj forKey:key];
+    }];
+    self.layoutAttributesArrayCache = mutableArrayLayoutAttributes;
+    self.layoutAttributesDictionaryCache = mutableDictionaryLayoutAttributes;
+  }
   
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
-  NSMutableArray *mutableLayoutAttributes = [NSMutableArray arrayWithArray:[super layoutAttributesForElementsInRect:rect]];
-  [self.layoutAttributesCacheForSupplementaryView enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, UICollectionViewLayoutAttributes * _Nonnull obj, BOOL * _Nonnull stop) {
-    [mutableLayoutAttributes addObject:obj];
-  }];
-  return mutableLayoutAttributes;
+  return self.layoutAttributesArrayCache;
 }
-
 
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
@@ -66,12 +85,12 @@
   if (numberOfItemsInSection == indexPath.row + 1) {
     layoutAttributesForSupplementaryView.hidden = YES;
   }else{
-    UICollectionViewLayoutAttributes *layoutAttributesForCell = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *layoutAttributesForCell = self.layoutAttributesDictionaryCache[indexPath];
     CGFloat maxOriginX = CGRectGetMaxX(layoutAttributesForCell.frame);
     CGFloat centerY = layoutAttributesForCell.center.y;
-    CGFloat height = layoutAttributesForCell.size.height;
+    CGFloat supplementaryHeight =  layoutAttributesForCell.size.height - (self.separatorInsets.top + self.separatorInsets.bottom);
     layoutAttributesForSupplementaryView.center = CGPointMake(maxOriginX, centerY);
-    layoutAttributesForSupplementaryView.size = CGSizeMake(self.separatorWidth, height - (self.separatorInsets.top + self.separatorInsets.bottom));
+    layoutAttributesForSupplementaryView.size = CGSizeMake(self.separatorWidth, supplementaryHeight);
   }
   return layoutAttributesForSupplementaryView;
 }
