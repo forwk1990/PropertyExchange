@@ -29,7 +29,7 @@ class YPHomeTableViewController: UITableViewController {
     var _functionModels = [(title:String,controller:UIViewController.Type,detail:String,image:String)]()
     _functionModels.append((title:"项目投资",controller:YPProjectInverstmentViewController.self,detail:"收益稳定 期限灵活",image:"项目投资"))
     _functionModels.append((title:"债权收购",controller:YPRightBuyViewController.self,detail:"折翼转让 流动性强",image:"债权收购"))
-    _functionModels.append((title:"我要借款",controller:UIViewController.self,detail:"我要借款 多样偿付",image:"我要借款"))
+    _functionModels.append((title:"我要借款",controller:YPBorrowController.self,detail:"我要借款 多样偿付",image:"我要借款"))
     return _functionModels
   }()
   
@@ -77,7 +77,14 @@ class YPHomeTableViewController: UITableViewController {
     self.tableView.sectionFooterHeight = 10
     self.tableView.rowHeight = 75
     
-    
+    self.popGestureLockViewController()
+  }
+  
+  private func popGestureLockViewController(){
+    let gestureVerifyViewController = YPGestureVerifyViewController()
+    self.navigationController?.present(gestureVerifyViewController, animated: true, completion: { 
+      
+    })
   }
   
   private func setNavigationBar(){

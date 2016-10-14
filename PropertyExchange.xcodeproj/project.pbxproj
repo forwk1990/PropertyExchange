@@ -66,6 +66,11 @@
 		0BAF70421D9BB0E900E8E22F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF70411D9BB0E900E8E22F /* UIColor.swift */; };
 		0BAF70481D9BB7B500E8E22F /* YPHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF70471D9BB7B500E8E22F /* YPHomeTableViewController.swift */; };
 		0BB1A23F1DAB9E70002394CC /* YPSegementCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1A23E1DAB9E70002394CC /* YPSegementCollectionViewCell.m */; };
+		0BEFC74A1DB070BD0046FA76 /* YPBorrowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEFC7491DB070BD0046FA76 /* YPBorrowController.swift */; };
+		0BEFC74C1DB077970046FA76 /* YPSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEFC74B1DB077970046FA76 /* YPSelectView.swift */; };
+		0BEFC74E1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEFC74D1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift */; };
+		0BEFC7501DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEFC74F1DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift */; };
+		0BEFC7521DB0CE7C0046FA76 /* ccb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BEFC7511DB0CE7C0046FA76 /* ccb.png */; };
 		D3914B43CF8A6DE542659DB6 /* Pods_PropertyExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6E600A300D74AAB5089F9E /* Pods_PropertyExchange.framework */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +192,11 @@
 		0BAF70471D9BB7B500E8E22F /* YPHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPHomeTableViewController.swift; sourceTree = "<group>"; };
 		0BB1A23D1DAB9E70002394CC /* YPSegementCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPSegementCollectionViewCell.h; sourceTree = "<group>"; };
 		0BB1A23E1DAB9E70002394CC /* YPSegementCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSegementCollectionViewCell.m; sourceTree = "<group>"; };
+		0BEFC7491DB070BD0046FA76 /* YPBorrowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPBorrowController.swift; sourceTree = "<group>"; };
+		0BEFC74B1DB077970046FA76 /* YPSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPSelectView.swift; sourceTree = "<group>"; };
+		0BEFC74D1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPSelectBankCardViewController.swift; sourceTree = "<group>"; };
+		0BEFC74F1DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPSelectBankCardTableViewCell.swift; sourceTree = "<group>"; };
+		0BEFC7511DB0CE7C0046FA76 /* ccb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccb.png; sourceTree = "<group>"; };
 		5F6E600A300D74AAB5089F9E /* Pods_PropertyExchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyExchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAB9C128D46A40107F206E0 /* Pods-PropertyExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyExchange/Pods-PropertyExchange.release.xcconfig"; sourceTree = "<group>"; };
 		EBDC78CF8873168C415EAD2A /* Pods-PropertyExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyExchange/Pods-PropertyExchange.debug.xcconfig"; sourceTree = "<group>"; };
@@ -517,6 +527,7 @@
 		0BAF6FFD1D9B706200E8E22F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0BEFC7451DB06FA40046FA76 /* Borrow */,
 				0B84B8411DAA1AC7006B9157 /* ProjectDetail */,
 				0B32BD391D9E4BB100543376 /* User */,
 				0B8549491D9E020000DD4EDA /* RightBuy */,
@@ -530,6 +541,7 @@
 		0BAF6FFE1D9B70B200E8E22F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0BEFC7511DB0CE7C0046FA76 /* ccb.png */,
 				0B188FF41DAF80B900943D88 /* userLogo.png */,
 				0B8549531D9E0FEA00DD4EDA /* right_buy_list.json */,
 				0B0DEC641D9CF7E3008233D4 /* project_inverstment_list.json */,
@@ -646,6 +658,41 @@
 				0B8549581D9E18B500DD4EDA /* StringExtensions.swift */,
 			);
 			name = extensions;
+			sourceTree = "<group>";
+		};
+		0BEFC7451DB06FA40046FA76 /* Borrow */ = {
+			isa = PBXGroup;
+			children = (
+				0BEFC7481DB06FCC0046FA76 /* Model */,
+				0BEFC7471DB06FC70046FA76 /* View */,
+				0BEFC7461DB06FC00046FA76 /* Controller */,
+			);
+			name = Borrow;
+			sourceTree = "<group>";
+		};
+		0BEFC7461DB06FC00046FA76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BEFC7491DB070BD0046FA76 /* YPBorrowController.swift */,
+				0BEFC74D1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0BEFC7471DB06FC70046FA76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BEFC74B1DB077970046FA76 /* YPSelectView.swift */,
+				0BEFC74F1DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0BEFC7481DB06FCC0046FA76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E6CFC3C2D9168030D80B9003 /* Pods */ = {
@@ -773,6 +820,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEFC7521DB0CE7C0046FA76 /* ccb.png in Resources */,
 				0BA8FC5E1D9B65DE0050BD61 /* LaunchScreen.storyboard in Resources */,
 				0B0DEC651D9CF7E3008233D4 /* project_inverstment_list.json in Resources */,
 				0BA8FC5B1D9B65DE0050BD61 /* Assets.xcassets in Resources */,
@@ -869,6 +917,7 @@
 				0B410D0A1DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m in Sources */,
 				0BA8FC561D9B65DE0050BD61 /* ViewController.m in Sources */,
 				0B188FEE1DAF70AE00943D88 /* PCCircleViewConst.m in Sources */,
+				0BEFC74E1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift in Sources */,
 				0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */,
 				0B410D071DACCCE500046621 /* YPSegementCollectionViewLayout.m in Sources */,
 				0BAF70251D9B733600E8E22F /* YPMembership.m in Sources */,
@@ -876,6 +925,7 @@
 				0B188FF31DAF720800943D88 /* YPGestureVerifyViewController.swift in Sources */,
 				0BAF70141D9B732A00E8E22F /* YPHttpRequestProxy.m in Sources */,
 				0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */,
+				0BEFC74A1DB070BD0046FA76 /* YPBorrowController.swift in Sources */,
 				0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */,
 				0BAF702F1D9B9F1700E8E22F /* YPUIViewController.m in Sources */,
 				0B3A3B0B1DAB944C00A25ACA /* YPSegementControl.m in Sources */,
@@ -901,6 +951,7 @@
 				0BAF70281D9B733600E8E22F /* YPMembershipUser.m in Sources */,
 				0B0DEC5C1D9CB1DD008233D4 /* YPProjectInverstmentViewController.swift in Sources */,
 				0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */,
+				0BEFC74C1DB077970046FA76 /* YPSelectView.swift in Sources */,
 				0B188FEC1DAF70AE00943D88 /* PCCircle.m in Sources */,
 				0BAF703B1D9BA15A00E8E22F /* YPHomeHeaderView.m in Sources */,
 				0B188FED1DAF70AE00943D88 /* PCCircleView.m in Sources */,
@@ -908,6 +959,7 @@
 				0BAF70131D9B732A00E8E22F /* NSString+YPNetwork.m in Sources */,
 				0BAF70241D9B733600E8E22F /* NSDate+UTC.m in Sources */,
 				0BAF70481D9BB7B500E8E22F /* YPHomeTableViewController.swift in Sources */,
+				0BEFC7501DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift in Sources */,
 				0BA8FC531D9B65DE0050BD61 /* AppDelegate.m in Sources */,
 				0B3A3B071DAB6E9500A25ACA /* YPBankTableViewCell.swift in Sources */,
 				0BAF70271D9B733600E8E22F /* YPMembershipProvider.m in Sources */,

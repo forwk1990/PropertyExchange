@@ -13,7 +13,15 @@ extension YPGestureVerifyViewController:CircleViewDelegate{
   func circleView(_ view: PCCircleView, type: CircleViewType, didCompleteLoginGesture gesture: String, result equal: Bool) {
     if type == .verify {
       if equal {
-        
+        self.dismiss(animated: true, completion: { 
+          
+        })
+      }else{
+        self.lockLabel.alpha = 1.0
+        self.lockLabel.showWarnMsgAndShake("手势密码不正确")
+        UIView.animate(withDuration: 2.5, animations: {
+          self.lockLabel.alpha = 0
+        })
       }
     }
   }
@@ -24,15 +32,34 @@ class YPGestureVerifyViewController: UIViewController {
   
   fileprivate let lockPassword = "1235789"
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.setupNavigationBar()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.view.backgroundColor = UIColor.white
+    
+    self.createSubviews()
+    self.createLayoutSubviews()
+    
     // 保存手势密码
-    PCCircleViewConst.saveGesture(self.lockPassword, key: gestureOneSaveKey)
+    PCCircleViewConst.saveGesture(self.lockPassword, key: gestureFinalSaveKey)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  // 设置导航
+  private func setupNavigationBar(){
+    // 亮状态栏
+    UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
   }
   
   fileprivate func createSubviews(){
@@ -74,7 +101,35 @@ class YPGestureVerifyViewController: UIViewController {
       make.top.equalTo(self.userLogoImageView.snp.bottom).offset(10)
     }
     
-    self.
+    self.lockView.snp.makeConstraints { (make) in
+      make.centerX.equalTo(self.view)
+      make.width.height.equalTo(250)
+      make.top.equalTo(self.helloMessageLabel.snp.bottom).offset(35)
+    }
+    
+    self.lockLabel.snp.makeConstraints { (make) in
+      make.centerX.equalTo(self.view)
+      make.top.equalTo(self.helloMessageLabel.snp.bottom).offset(15)
+    }
+    
+    self.separatorLineView.snp.makeConstraints { (make) in
+      make.centerX.equalTo(self.view)
+      make.height.equalTo(14)
+      make.width.equalTo(1)
+      make.bottom.equalTo(self.view).offset(-40)
+    }
+    
+    self.forgetGesturePasswordButton.snp.makeConstraints { (make) in
+      make.height.equalTo(14)
+      make.right.equalTo(self.separatorLineView.snp.left).offset(-15)
+      make.bottom.equalTo(self.separatorLineView)
+    }
+    
+    self.otherLoginButton.snp.makeConstraints { (make) in
+      make.height.equalTo(14)
+      make.left.equalTo(self.separatorLineView.snp.right).offset(15)
+      make.bottom.equalTo(self.separatorLineView)
+    }
     
   }
   
@@ -107,11 +162,16 @@ class YPGestureVerifyViewController: UIViewController {
   fileprivate lazy var userLogoImageView:UIImageView = {
     let _logoImageView = UIImageView()
     _logoImageView.image = UIImage(named: "userLogo")
+    _logoImageView.layer.cornerRadius = 32
+    _logoImageView.clipsToBounds = true
     return _logoImageView
   }()
   
   fileprivate lazy var helloMessageLabel:UILabel = {
+    let dateString = NSDate().hour >= 12 ? "下午" : "上午"
+    
     let _helloMessageLabel = UILabel()
+    _helloMessageLabel.text = "\(dateString)好！万先生"
     _helloMessageLabel.font = UIFont.systemFont(ofSize: 12)
     _helloMessageLabel.textColor = UIColor.colorWithHex(hex: 0x39404D)
     return _helloMessageLabel

@@ -31,4 +31,12 @@ extension String
     }
   }
   
+  static func moneyString(from string:String) -> String{
+
+    guard let numberValue = NumberFormatter().number(from: string) else {return ""}
+  
+    return "¥ \(NumberFormatter.localizedString(from: numberValue, number: .decimal))"
+    
+  }
+  
 }
