@@ -42,6 +42,13 @@
 		0B8549571D9E182600DD4EDA /* NSString+DecimalFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8549561D9E182600DD4EDA /* NSString+DecimalFormat.m */; };
 		0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8549581D9E18B500DD4EDA /* StringExtensions.swift */; };
 		0B9D17131DA8A30E00C04955 /* YPTranslationTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */; };
+		0BA718D21DB39EE100A9E284 /* YPPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718D11DB39EE100A9E284 /* YPPickerView.swift */; };
+		0BA718D41DB3B18500A9E284 /* YPTradeRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718D31DB3B18500A9E284 /* YPTradeRecordTableViewCell.swift */; };
+		0BA718D71DB3B73800A9E284 /* YPTradeRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718D61DB3B73800A9E284 /* YPTradeRecordTableViewController.swift */; };
+		0BA718D91DB3BCB300A9E284 /* YPNothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718D81DB3BCB300A9E284 /* YPNothingView.swift */; };
+		0BA718DB1DB3C05200A9E284 /* YPInvestmentManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718DA1DB3C05200A9E284 /* YPInvestmentManageViewController.swift */; };
+		0BA718DD1DB3C53100A9E284 /* YPBorrowManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718DC1DB3C53100A9E284 /* YPBorrowManageViewController.swift */; };
+		0BA718DF1DB3C58C00A9E284 /* YPRightManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA718DE1DB3C58C00A9E284 /* YPRightManageViewController.swift */; };
 		0BA8FC501D9B65DE0050BD61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC4F1D9B65DE0050BD61 /* main.m */; };
 		0BA8FC531D9B65DE0050BD61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC521D9B65DE0050BD61 /* AppDelegate.m */; };
 		0BA8FC561D9B65DE0050BD61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8FC551D9B65DE0050BD61 /* ViewController.m */; };
@@ -141,6 +148,13 @@
 		0B8549581D9E18B500DD4EDA /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		0B9D17111DA8A30E00C04955 /* YPTranslationTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YPTranslationTransitionAnimator.h; path = YPTransitionAnimator/YPTranslationTransitionAnimator.h; sourceTree = "<group>"; };
 		0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YPTranslationTransitionAnimator.m; path = YPTransitionAnimator/YPTranslationTransitionAnimator.m; sourceTree = "<group>"; };
+		0BA718D11DB39EE100A9E284 /* YPPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPPickerView.swift; sourceTree = "<group>"; };
+		0BA718D31DB3B18500A9E284 /* YPTradeRecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPTradeRecordTableViewCell.swift; sourceTree = "<group>"; };
+		0BA718D61DB3B73800A9E284 /* YPTradeRecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPTradeRecordTableViewController.swift; sourceTree = "<group>"; };
+		0BA718D81DB3BCB300A9E284 /* YPNothingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPNothingView.swift; sourceTree = "<group>"; };
+		0BA718DA1DB3C05200A9E284 /* YPInvestmentManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPInvestmentManageViewController.swift; sourceTree = "<group>"; };
+		0BA718DC1DB3C53100A9E284 /* YPBorrowManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPBorrowManageViewController.swift; sourceTree = "<group>"; };
+		0BA718DE1DB3C58C00A9E284 /* YPRightManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPRightManageViewController.swift; sourceTree = "<group>"; };
 		0BA8FC4B1D9B65DE0050BD61 /* PropertyExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA8FC4F1D9B65DE0050BD61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0BA8FC511D9B65DE0050BD61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -329,6 +343,7 @@
 		0B32BD391D9E4BB100543376 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				0BA718D51DB3B6DF00A9E284 /* Model */,
 				0B32BD3B1D9E4BC400543376 /* View */,
 				0B32BD3A1D9E4BBE00543376 /* Controller */,
 			);
@@ -338,7 +353,11 @@
 		0B32BD3A1D9E4BBE00543376 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0BA718D61DB3B73800A9E284 /* YPTradeRecordTableViewController.swift */,
 				0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */,
+				0BA718DA1DB3C05200A9E284 /* YPInvestmentManageViewController.swift */,
+				0BA718DC1DB3C53100A9E284 /* YPBorrowManageViewController.swift */,
+				0BA718DE1DB3C58C00A9E284 /* YPRightManageViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -346,6 +365,8 @@
 		0B32BD3B1D9E4BC400543376 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0BA718D31DB3B18500A9E284 /* YPTradeRecordTableViewCell.swift */,
+				0BA718D81DB3BCB300A9E284 /* YPNothingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -435,6 +456,13 @@
 				0B9D17121DA8A30E00C04955 /* YPTranslationTransitionAnimator.m */,
 			);
 			name = TransitionAnimation;
+			sourceTree = "<group>";
+		};
+		0BA718D51DB3B6DF00A9E284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		0BA8FC421D9B65DE0050BD61 = {
@@ -684,6 +712,7 @@
 			children = (
 				0BEFC74B1DB077970046FA76 /* YPSelectView.swift */,
 				0BEFC74F1DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift */,
+				0BA718D11DB39EE100A9E284 /* YPPickerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -911,12 +940,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA718DF1DB3C58C00A9E284 /* YPRightManageViewController.swift in Sources */,
 				0B0DEC6A1D9D08D2008233D4 /* CircleProgressBar.m in Sources */,
 				0BAF70151D9B732A00E8E22F /* YPMethodInvoker.m in Sources */,
 				0B85494F1D9E0CE700DD4EDA /* YPRightBuyTableViewCellModel.swift in Sources */,
 				0B410D0A1DACDA1600046621 /* YPSegementSeparatorSupplementaryView.m in Sources */,
 				0BA8FC561D9B65DE0050BD61 /* ViewController.m in Sources */,
 				0B188FEE1DAF70AE00943D88 /* PCCircleViewConst.m in Sources */,
+				0BA718D41DB3B18500A9E284 /* YPTradeRecordTableViewCell.swift in Sources */,
 				0BEFC74E1DB08EAA0046FA76 /* YPSelectBankCardViewController.swift in Sources */,
 				0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */,
 				0B410D071DACCCE500046621 /* YPSegementCollectionViewLayout.m in Sources */,
@@ -954,6 +985,7 @@
 				0BEFC74C1DB077970046FA76 /* YPSelectView.swift in Sources */,
 				0B188FEC1DAF70AE00943D88 /* PCCircle.m in Sources */,
 				0BAF703B1D9BA15A00E8E22F /* YPHomeHeaderView.m in Sources */,
+				0BA718D21DB39EE100A9E284 /* YPPickerView.swift in Sources */,
 				0B188FED1DAF70AE00943D88 /* PCCircleView.m in Sources */,
 				0BAF70161D9B732A00E8E22F /* YPNetworkConfiguration.m in Sources */,
 				0BAF70131D9B732A00E8E22F /* NSString+YPNetwork.m in Sources */,
@@ -964,9 +996,13 @@
 				0B3A3B071DAB6E9500A25ACA /* YPBankTableViewCell.swift in Sources */,
 				0BAF70271D9B733600E8E22F /* YPMembershipProvider.m in Sources */,
 				0BA8FC501D9B65DE0050BD61 /* main.m in Sources */,
+				0BA718DB1DB3C05200A9E284 /* YPInvestmentManageViewController.swift in Sources */,
 				0B43126D1D9BC4A2007AF496 /* YPHomeCollectionViewCell.swift in Sources */,
 				0BB1A23F1DAB9E70002394CC /* YPSegementCollectionViewCell.m in Sources */,
+				0BA718D91DB3BCB300A9E284 /* YPNothingView.swift in Sources */,
 				0B188FF11DAF70AE00943D88 /* PCLockLabel.m in Sources */,
+				0BA718D71DB3B73800A9E284 /* YPTradeRecordTableViewController.swift in Sources */,
+				0BA718DD1DB3C53100A9E284 /* YPBorrowManageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1108,13 +1144,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 63B9F4PKVA;
-				GCC_PREFIX_HEADER = PropertyExchange/PropertyExchange_PrefixHeader.h;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange_PrefixHeader.h";
 				INFOPLIST_FILE = PropertyExchange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itachi.PropertyExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PropertyExchange/PropertyExchange-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1127,13 +1163,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 63B9F4PKVA;
-				GCC_PREFIX_HEADER = PropertyExchange/PropertyExchange_PrefixHeader.h;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange_PrefixHeader.h";
 				INFOPLIST_FILE = PropertyExchange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itachi.PropertyExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PropertyExchange/PropertyExchange-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

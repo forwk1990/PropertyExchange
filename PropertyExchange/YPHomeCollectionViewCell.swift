@@ -53,7 +53,7 @@ class YPHomeCollectionViewCell: UICollectionViewCell
     fatalError("init(coder:) has not been implemented")
   }
   
-  public var model:(title:String,image:String)?{
+  public var model:(title:String,image:String,controller:UIViewController.Type)?{
     didSet{
       guard let _model = self.model else {
         return

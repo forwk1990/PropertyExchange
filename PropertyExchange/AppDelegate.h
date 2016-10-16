@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMDrawerController.h"
+#import <MMDrawerController/MMDrawerController.h>
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

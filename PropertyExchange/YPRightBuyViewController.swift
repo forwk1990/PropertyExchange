@@ -115,7 +115,7 @@ class YPRightBuyViewController: UIViewController {
   
   private func setNavigationBar(){
     self.view.backgroundColor = UIColor.colorWithHex(hex: 0xFFFFFF)
-    self.title = "项目投资"
+    self.title = "债权收购"
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(color:UIColor.white), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage(color: UIColor.colorWithHex(hex: 0xDCDCDC))
     self.navigationController?.navigationBar.backgroundColor = UIColor.white

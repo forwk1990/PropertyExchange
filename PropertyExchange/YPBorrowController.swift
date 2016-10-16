@@ -8,6 +8,28 @@
 
 import UIKit
 
+extension YPBorrowController:UIPickerViewDataSource
+{
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return 5
+  }
+}
+
+extension YPBorrowController:UIPickerViewDelegate
+{
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    let attributedString = NSAttributedString(string: self.periodsValues[row].title, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 14),NSForegroundColorAttributeName:UIColor.black])
+    return attributedString
+  }
+  func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    return 40
+  }
+}
+
 extension YPBorrowController:YPSelectBankCardViewControllerDelegate
 {
   func selectBankCardViewController(_ controller: YPSelectBankCardViewController, didSelect bank: (String, String)) {
@@ -19,20 +41,24 @@ extension YPBorrowController:UITextFieldDelegate
 {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
+    // 最多只能允许输入6位
     if moneyText.lengthOfBytes(using: String.Encoding.utf8) >= 6 {
       return false
     }
 
-    // 删除
     var newMoney:String = ""
-    if string.isEmpty {
+    if string.isEmpty {// 删除
       newMoney = moneyText.substring(to: moneyText.index(before: moneyText.endIndex))
     }else{ // 新增
       newMoney = moneyText.appending(string)
     }
     
+    // 重新设置当前输入框的值
     textField.text = String.moneyString(from: newMoney)
+    
+    // 保存当前真实值
     moneyText = newMoney
+    
     return false
   }
 }
@@ -40,18 +66,28 @@ extension YPBorrowController:UITextFieldDelegate
 class YPBorrowController: UIViewController {
   
   var moneyText = ""
+  var periodsValues:[(title:String,value:Float)] = [(title:String,value:Float)]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    periodsValues.append((title:"一期",value:0.15))
+    periodsValues.append((title:"三期",value:0.15))
+    periodsValues.append((title:"六期",value:0.15))
+    periodsValues.append((title:"十二期",value:0.25))
+    periodsValues.append((title:"二十四期",value:0.5))
+    
+    
+    
     self.createSubviews()
     self.createLayoutSubviews()
     self.setNavigationBar()
+    
+    self.view.addSubview(self.periodsValuePickerView)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
     self.moneyTextField.becomeFirstResponder()
   }
   
@@ -81,7 +117,7 @@ class YPBorrowController: UIViewController {
   }
   
   @objc private func backButtonTouched(sender:UIButton){
-    self.navigationController?.popViewController(animated: true)
+    _ = self.navigationController?.popViewController(animated: true)
   }
   
   fileprivate func createSubviews(){
@@ -142,6 +178,16 @@ class YPBorrowController: UIViewController {
     }
     
   }
+  
+  fileprivate lazy var periodsValuePickerView:UIPickerView = {
+    let _periodsValuePickerView = UIPickerView(frame: CGRect.zero)
+    let frame = CGRect(x:0, y: ScreenHeight - 200, width: ScreenWidth, height: 200)
+    _periodsValuePickerView.backgroundColor = UIColor.white
+    _periodsValuePickerView.frame = frame
+    _periodsValuePickerView.dataSource = self
+    _periodsValuePickerView.delegate = self
+    return _periodsValuePickerView
+  }()
   
   fileprivate lazy var moneyContainer:UIView = {
     let _moneyContainer = UIView()

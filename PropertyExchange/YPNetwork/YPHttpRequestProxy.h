@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YPNetworkCommonHeader.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 
 
 NS_ASSUME_NONNULL_BEGIN

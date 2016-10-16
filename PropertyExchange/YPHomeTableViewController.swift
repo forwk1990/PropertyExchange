@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension YPHomeTableViewController:UICollectionViewDataSource
+extension YPHomeTableViewController:UICollectionViewDataSource,UICollectionViewDelegate
 {
   
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -19,6 +19,12 @@ extension YPHomeTableViewController:UICollectionViewDataSource
     let cell:YPHomeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyExchange.YPHomeCollectionViewCell", for: indexPath) as! YPHomeCollectionViewCell
     cell.model = self.mamageModels[indexPath.row]
     return cell;
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let _modelItem = self.mamageModels[indexPath.row]
+    let viewController = _modelItem.controller.init()
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
   
 }
@@ -33,14 +39,14 @@ class YPHomeTableViewController: UITableViewController {
     return _functionModels
   }()
   
-  lazy var mamageModels:[(title:String,image:String)] = {
-    var _manageModels = [(title:String,image:String)]()
-    _manageModels.append((title:"投资管理",image:"投资管理"))
-    _manageModels.append((title:"借款管理",image:"借款管理"))
-    _manageModels.append((title:"债权转让",image:"债权转让"))
-    _manageModels.append((title:"交易记录",image:"交易记录"))
-    _manageModels.append((title:"积分管理",image:"积分管理"))
-    _manageModels.append((title:"自动投标",image:"自动投标"))
+  lazy var mamageModels:[(title:String,image:String,controller:UIViewController.Type)] = {
+    var _manageModels = [(title:String,image:String,controller:UIViewController.Type)]()
+    _manageModels.append((title:"投资管理",image:"投资管理",controller:YPInvestmentManageViewController.self))
+    _manageModels.append((title:"借款管理",image:"借款管理",controller:YPBorrowManageViewController.self))
+    _manageModels.append((title:"债权转让",image:"债权转让",controller:YPRightManageViewController.self))
+    _manageModels.append((title:"交易记录",image:"交易记录",controller:YPTradeRecordTableViewController.self))
+    _manageModels.append((title:"积分管理",image:"积分管理",controller:YPTradeRecordTableViewController.self))
+    _manageModels.append((title:"自动投标",image:"自动投标",controller:YPTradeRecordTableViewController.self))
     return _manageModels
   }()
   
@@ -63,6 +69,7 @@ class YPHomeTableViewController: UITableViewController {
     let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
     collectionView.register(NSClassFromString("PropertyExchange.YPHomeCollectionViewCell"), forCellWithReuseIdentifier: "PropertyExchange.YPHomeCollectionViewCell")
     collectionView.dataSource = self
+    collectionView.delegate = self
     collectionView.backgroundColor = UIColor.colorWithHex(hex: 0xFFFFFF)
     return collectionView
   }()
