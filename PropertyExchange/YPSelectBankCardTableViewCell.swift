@@ -51,8 +51,6 @@ class YPSelectBankCardTableViewCell: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    
-    
     self.contentView.snp.makeConstraints { (make) in
       make.top.left.equalTo(self).offset(18)
       make.right.bottom.equalTo(self).offset(-18)
@@ -60,6 +58,7 @@ class YPSelectBankCardTableViewCell: UITableViewCell {
     
     self.imageView?.snp.makeConstraints { (make) in
       make.width.height.equalTo(32)
+      make.left.top.equalTo(self.contentView)
     }
     
     self.textLabel?.snp.makeConstraints({ (make) in

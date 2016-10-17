@@ -64,7 +64,7 @@ class YPTradeRecordTableViewCell: UITableViewCell {
     
     self.categoryLabel.snp.makeConstraints { (make) in
       make.top.equalTo(self.contentView).offset(15)
-      make.left.equalTo(self.contentView.snp.centerX)
+      make.left.equalTo(self.contentView).offset(210)
     }
     
     self.dateLabel.snp.makeConstraints { (make) in

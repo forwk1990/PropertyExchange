@@ -84,7 +84,7 @@ class YPHomeTableViewController: UITableViewController {
     self.tableView.sectionFooterHeight = 10
     self.tableView.rowHeight = 75
     
-    self.popGestureLockViewController()
+    //self.popGestureLockViewController()
   }
   
   private func popGestureLockViewController(){

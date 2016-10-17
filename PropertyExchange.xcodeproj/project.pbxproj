@@ -23,6 +23,10 @@
 		0B188FF11DAF70AE00943D88 /* PCLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FEB1DAF70AE00943D88 /* PCLockLabel.m */; };
 		0B188FF31DAF720800943D88 /* YPGestureVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B188FF21DAF720800943D88 /* YPGestureVerifyViewController.swift */; };
 		0B188FF51DAF80B900943D88 /* userLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B188FF41DAF80B900943D88 /* userLogo.png */; };
+		0B2C4F061DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C4F051DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.m */; };
+		0B2C4F0A1DB4CEC0003DA0AB /* YPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C4F091DB4CEC0003DA0AB /* YPBaseNavigationController.m */; };
+		0B2C4F0C1DB4D280003DA0AB /* YPTradeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C4F0B1DB4D280003DA0AB /* YPTradeRecord.swift */; };
+		0B2C4F0E1DB4D53B003DA0AB /* trade_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B2C4F0D1DB4D53B003DA0AB /* trade_list.json */; };
 		0B32BD381D9E39FA00543376 /* YPFilterCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */; };
 		0B32BD3D1D9E4BE200543376 /* YPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */; };
 		0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */; };
@@ -123,6 +127,12 @@
 		0B188FEB1DAF70AE00943D88 /* PCLockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLockLabel.m; sourceTree = "<group>"; };
 		0B188FF21DAF720800943D88 /* YPGestureVerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPGestureVerifyViewController.swift; sourceTree = "<group>"; };
 		0B188FF41DAF80B900943D88 /* userLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userLogo.png; sourceTree = "<group>"; };
+		0B2C4F041DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		0B2C4F051DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		0B2C4F081DB4CEC0003DA0AB /* YPBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPBaseNavigationController.h; sourceTree = "<group>"; };
+		0B2C4F091DB4CEC0003DA0AB /* YPBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPBaseNavigationController.m; sourceTree = "<group>"; };
+		0B2C4F0B1DB4D280003DA0AB /* YPTradeRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPTradeRecord.swift; sourceTree = "<group>"; };
+		0B2C4F0D1DB4D53B003DA0AB /* trade_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trade_list.json; sourceTree = "<group>"; };
 		0B32BD371D9E39FA00543376 /* YPFilterCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPFilterCollectionHeaderView.swift; sourceTree = "<group>"; };
 		0B32BD3C1D9E4BE200543376 /* YPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProfileViewController.swift; sourceTree = "<group>"; };
 		0B3A3B041DAB6ABF00A25ACA /* YPProjectMoneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPProjectMoneyView.swift; sourceTree = "<group>"; };
@@ -340,6 +350,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0B2C4F031DB4CE42003DA0AB /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				0B2C4F041DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.h */,
+				0B2C4F051DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		0B2C4F071DB4CE93003DA0AB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0B2C4F081DB4CEC0003DA0AB /* YPBaseNavigationController.h */,
+				0B2C4F091DB4CEC0003DA0AB /* YPBaseNavigationController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		0B32BD391D9E4BB100543376 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +489,7 @@
 		0BA718D51DB3B6DF00A9E284 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B2C4F0B1DB4D280003DA0AB /* YPTradeRecord.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -555,6 +584,7 @@
 		0BAF6FFD1D9B706200E8E22F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0B2C4F071DB4CE93003DA0AB /* Base */,
 				0BEFC7451DB06FA40046FA76 /* Borrow */,
 				0B84B8411DAA1AC7006B9157 /* ProjectDetail */,
 				0B32BD391D9E4BB100543376 /* User */,
@@ -569,6 +599,7 @@
 		0BAF6FFE1D9B70B200E8E22F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0B2C4F0D1DB4D53B003DA0AB /* trade_list.json */,
 				0BEFC7511DB0CE7C0046FA76 /* ccb.png */,
 				0B188FF41DAF80B900943D88 /* userLogo.png */,
 				0B8549531D9E0FEA00DD4EDA /* right_buy_list.json */,
@@ -581,6 +612,7 @@
 		0BAF70011D9B72F900E8E22F /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0B2C4F031DB4CE42003DA0AB /* FDFullscreenPopGesture */,
 				0B188FDC1DAF709C00943D88 /* GestureUnlock */,
 				0B3A3B081DAB934200A25ACA /* YPSegementControl */,
 				0B9D17101DA8A18400C04955 /* TransitionAnimation */,
@@ -804,9 +836,8 @@
 				TargetAttributes = {
 					0BA8FC4A1D9B65DE0050BD61 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 63B9F4PKVA;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					0BA8FC631D9B65DE0050BD61 = {
 						CreatedOnToolsVersion = 8.0;
@@ -855,6 +886,7 @@
 				0BA8FC5B1D9B65DE0050BD61 /* Assets.xcassets in Resources */,
 				0B188FF51DAF80B900943D88 /* userLogo.png in Resources */,
 				0B8549541D9E0FEA00DD4EDA /* right_buy_list.json in Resources */,
+				0B2C4F0E1DB4D53B003DA0AB /* trade_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +989,7 @@
 				0BAF70141D9B732A00E8E22F /* YPHttpRequestProxy.m in Sources */,
 				0B8549591D9E18B500DD4EDA /* StringExtensions.swift in Sources */,
 				0BEFC74A1DB070BD0046FA76 /* YPBorrowController.swift in Sources */,
+				0B2C4F0A1DB4CEC0003DA0AB /* YPBaseNavigationController.m in Sources */,
 				0B84B8481DAA1B57006B9157 /* YPProjectDetailHeaderView.swift in Sources */,
 				0BAF702F1D9B9F1700E8E22F /* YPUIViewController.m in Sources */,
 				0B3A3B0B1DAB944C00A25ACA /* YPSegementControl.m in Sources */,
@@ -981,6 +1014,7 @@
 				0B0DEC5E1D9CC180008233D4 /* YPProjectInverstmentTableViewCell.swift in Sources */,
 				0BAF70281D9B733600E8E22F /* YPMembershipUser.m in Sources */,
 				0B0DEC5C1D9CB1DD008233D4 /* YPProjectInverstmentViewController.swift in Sources */,
+				0B2C4F0C1DB4D280003DA0AB /* YPTradeRecord.swift in Sources */,
 				0B3A3B051DAB6ABF00A25ACA /* YPProjectMoneyView.swift in Sources */,
 				0BEFC74C1DB077970046FA76 /* YPSelectView.swift in Sources */,
 				0B188FEC1DAF70AE00943D88 /* PCCircle.m in Sources */,
@@ -990,6 +1024,7 @@
 				0BAF70161D9B732A00E8E22F /* YPNetworkConfiguration.m in Sources */,
 				0BAF70131D9B732A00E8E22F /* NSString+YPNetwork.m in Sources */,
 				0BAF70241D9B733600E8E22F /* NSDate+UTC.m in Sources */,
+				0B2C4F061DB4CE42003DA0AB /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				0BAF70481D9BB7B500E8E22F /* YPHomeTableViewController.swift in Sources */,
 				0BEFC7501DB08F690046FA76 /* YPSelectBankCardTableViewCell.swift in Sources */,
 				0BA8FC531D9B65DE0050BD61 /* AppDelegate.m in Sources */,
@@ -1143,13 +1178,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 63B9F4PKVA;
+				CODE_SIGN_IDENTITY = "iPhone Developer: snail snail (U65B56TPD2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: snail snail (U65B56TPD2)";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange_PrefixHeader.h";
 				INFOPLIST_FILE = PropertyExchange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itachi.PropertyExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bbe469e5-77cb-44a9-b03b-f07cacc55a69";
+				PROVISIONING_PROFILE_SPECIFIER = ItachiDeveloper;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1162,13 +1201,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 63B9F4PKVA;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange_PrefixHeader.h";
 				INFOPLIST_FILE = PropertyExchange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itachi.PropertyExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bbe469e5-77cb-44a9-b03b-f07cacc55a69";
+				PROVISIONING_PROFILE_SPECIFIER = ItachiDeveloper;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/PropertyExchange/PropertyExchange-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

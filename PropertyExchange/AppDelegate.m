@@ -11,10 +11,12 @@
 #import "YPUIViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "YPBaseNavigationController.h"
 
 
 @interface AppDelegate ()
 
+@property (assign, nonatomic) BOOL openMenu;
 
 @end
 
@@ -24,16 +26,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    [Fabric with:@[[Crashlytics class]]];
   
   YPHomeTableViewController *centerViewController = [[YPHomeTableViewController alloc] init];
-  UINavigationController *navigationCenterViewController = [[UINavigationController alloc] initWithRootViewController:centerViewController];
+  UINavigationController *navigationCenterViewController = [[YPBaseNavigationController alloc] initWithRootViewController:centerViewController];
   
   YPProfileViewController *leftViewController = [[YPProfileViewController alloc] init];
-  UINavigationController *navigationLeftViewController = [[UINavigationController alloc] initWithRootViewController:leftViewController];
+  UINavigationController *navigationLeftViewController = [[YPBaseNavigationController alloc] initWithRootViewController:leftViewController];
   
   MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationCenterViewController leftDrawerViewController:navigationLeftViewController];
   self.drawerController = drawerController;
   [drawerController setShowsShadow:NO];
   [drawerController setMaximumLeftDrawerWidth:(CGRectGetWidth([UIScreen mainScreen].bounds) - 40)];
-  [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+  [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModePanningCenterView];
   [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
   
   self.window = [[UIWindow alloc] init];

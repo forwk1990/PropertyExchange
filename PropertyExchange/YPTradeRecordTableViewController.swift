@@ -7,8 +7,41 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+extension YPTradeRecordTableViewController:YPNetworkManagerDelegate
+{
+  @available(iOS 2.0, *)
+  public func networkManager(_ manager: YPNetworkManager!, successResponseObject responseObject: NSObject!) {
+    guard let _responseObject = responseObject else {return}
+    guard let code = JSON.init(_responseObject).dictionary?["Code"] , code == 0 else{return}
+    guard let data = JSON.init(_responseObject).dictionary?["Data"] else{return}
+    self.models = YPTradeRecord.models(json: data)
+  }
+  
+  func requestUrl() -> String! {
+    return "trade_list"
+  }
+  
+  func parameters() -> [String : Any]! {
+    return ["user":"" as AnyObject]
+  }
+  
+  
+  func networkManager(_ manager: YPNetworkManager!, failureResponseError error: Error!) {
+    
+  }
+}
 
 class YPTradeRecordTableViewController: UITableViewController {
+  private let networkManager:YPNetworkManager = YPNetworkManager.default()!
+  
+  fileprivate var models:[YPTradeRecord]?{
+    didSet{
+      guard let _models = self.models , _models.count > 0 else{return}
+      self.tableView.reloadData()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +56,9 @@ class YPTradeRecordTableViewController: UITableViewController {
     
     self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 0.01))
     self.tableView.register(YPTradeRecordTableViewCell.self, forCellReuseIdentifier: YPTradeRecordTableViewCell.className())
+    
+    self.networkManager.delegate = self
+    self.networkManager.sendRequest()
   }
   
   private func setNavigationBarStyle(){
@@ -64,16 +100,22 @@ class YPTradeRecordTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 10
+    guard let _models = self.models else {
+      return 0
+    }
+    return _models.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell:YPTradeRecordTableViewCell = YPTradeRecordTableViewCell.cell(withTableView:tableView,forReuseIdentifier:YPTradeRecordTableViewCell.className()) as! YPTradeRecordTableViewCell
+    guard let _model = self.models?[indexPath.row] else {
+      return cell
+    }
     cell.selectionStyle = .none
-    cell.imageView?.image = UIImage(named: "收入")
-    cell.textLabel?.text = "¥ 200,000.00"
-    cell.categoryLabel.text = "提现"
-    cell.dateLabel.text = "2015/10/03 09:00"
+    cell.imageView?.image = _model.isOut ? UIImage(named: "支出") : UIImage(named: "收入")
+    cell.textLabel?.text = "¥ \(String.decimalString(from: _model.money))"
+    cell.categoryLabel.text = _model.desc
+    cell.dateLabel.text = _model.date
     return cell
   }
   
