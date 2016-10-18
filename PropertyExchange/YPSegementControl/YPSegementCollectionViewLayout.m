@@ -18,6 +18,13 @@
 
 @implementation YPSegementCollectionViewLayout
 
+- (instancetype)init{
+  if (self = [super init]) {
+    
+  }
+  return self;
+}
+
 - (void)prepareLayout{
   [super prepareLayout];
   

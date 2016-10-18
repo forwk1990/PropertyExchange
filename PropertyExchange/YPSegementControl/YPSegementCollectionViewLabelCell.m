@@ -34,19 +34,26 @@
 }
 
 - (void)setTextColor:(UIColor *)textColor{
+  _textColor = textColor;
   self.label.textColor = textColor;
 }
 
-- (UIColor *)textColor{
-  return self.label.textColor;
-}
-
 - (void)setFont:(UIFont *)font{
+  _font = font;
   self.label.font = font;
 }
 
-- (UIFont *)font{
-  return self.label.font;
+- (void)setSelected:(BOOL)selected{
+  [super setSelected:selected];
+  
+  if (self.selected) {
+    self.label.textColor = self.selectedTextColor;
+    self.label.font = self.selectedFont;
+  }else{
+    self.label.textColor = self.textColor;
+    self.label.font = self.font;
+  }
+  
 }
 
 

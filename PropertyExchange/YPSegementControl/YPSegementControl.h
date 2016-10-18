@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
    */
   YPSegementControlItemTypeCollectionViewCell = 1,
   /**
-   A custom type,you can write a custom uiview.
+   A custom type,you can write a custom view.
    */
   YPSegementControlItemTypeCustom = 2
 };
@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
 - (void)segementControl:(YPSegementControl *)segementControl willDisplayView:(UIView *)view atIndex:(NSUInteger)index;
 - (void)segementControl:(YPSegementControl *)segementControl didDisplayView:(UIView *)view atIndex:(NSUInteger)index;
 - (void)segementControl:(YPSegementControl *)segementControl didSelectItemAtIndex:(NSUInteger)index;
+- (void)segementControl:(YPSegementControl *)segementControl didDeselectItemAtIndex:(NSUInteger)index;
 - (UIView *)segementControl:(YPSegementControl *)segementControl viewForItemAtIndex:(NSUInteger)index;
 - (NSUInteger)numberOfItemsIn:(YPSegementControl *)segementControl;
 
@@ -64,13 +65,19 @@ typedef NS_ENUM(NSUInteger, YPSegementControlItemType) {
 @property (nonatomic, assign) UIEdgeInsets containerInsets;
 @property (nonatomic, strong) UIColor *containerBackgroundColor;
 
+@property (nonatomic, weak) id<YPSegementControlDelegate> delegate;
+
 /**
  the default value is YPSegementControlItemTypeDefault.
  */
 @property (nonatomic, assign) YPSegementControlItemType itemType;
+/**
+ the value indicates the size of the segement control item.
+ */
 @property (nonatomic, assign) CGSize itemSize;
-
-@property (nonatomic, weak) id<YPSegementControlDelegate> delegate;
-
+/**
+ the index incidates which segement item is selected. default value is 0. 
+ */
+@property (nonatomic, assign) NSUInteger selectedIndex;
 
 @end

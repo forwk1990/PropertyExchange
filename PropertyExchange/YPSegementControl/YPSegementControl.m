@@ -13,17 +13,40 @@
 
 @interface YPSegementControl () <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, strong) UIView *indicatorView;
 @property (nonatomic, strong) UICollectionView *containerView;
 @property (nonatomic, strong) YPSegementCollectionViewLayout *containerViewLayout;
 @property (nonatomic, assign) CGFloat totalContentWidth;
 
 @end
 
-@implementation YPSegementControl
+@implementation YPSegementControl{
+  @private
+  BOOL _selectedTextColorSetted;
+  BOOL _selectedFontSizeSetted;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame{
   if (self = [super initWithFrame:frame]) {
+    
+    /* 
+     if you don't set selectedTextColor or selectedFontSize,the field value is NO.
+     */
+    _selectedTextColorSetted = NO;
+    _selectedFontSizeSetted = NO;
+    /**
+     Add an empty view to subviews of self.
+     if view controller has a first subview which type is scroll view and it's automaticallyAdjustsScrollViewInsets property has a default YES value,
+     UIKit will set the scroll view's content offset to -64, the layout object may will return empty collectionViewLayoutAttributes.
+     In my opinion，if the collection view item is outside off the collection view, the layout will not return collectionViewLayoutAttributes.
+     */
+    [self addSubview:[UIView new]];
+    
     [self addSubview:self.containerView];
+    
+    [self addSubview:self.indicatorView];
+    
+    // setting default value to properties
     [self initialize];
   }
   return self;
@@ -31,10 +54,8 @@
 
 - (void)initialize{
   
-  self.textColor = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0];
-  self.selectedTextColor = [UIColor blackColor];
-  self.fontSize = 14;
-  self.selectedFontSize = 14;
+  _textColor = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0];
+  _fontSize = 14;
   
   self.separatorVisible = YES;
   self.separatorColor = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0];
@@ -52,6 +73,16 @@
   self.containerInsets = UIEdgeInsetsZero;
   
   self.itemType = YPSegementControlItemTypeDefault;
+}
+
+- (void)setSelectedFontSize:(CGFloat)selectedFontSize{
+  _selectedFontSize = selectedFontSize;
+  _selectedFontSizeSetted = YES;
+}
+
+- (void)setSelectedTextColor:(UIColor *)selectedTextColor{
+  _selectedTextColor = selectedTextColor;
+  _selectedTextColorSetted = YES;
 }
 
 - (void)setContainerBackgroundColor:(UIColor *)containerBackgroundColor{
@@ -103,6 +134,13 @@
   self.containerView.layer.borderWidth = borderWidth;
 }
 
+- (UIView *)indicatorView{
+  if (_indicatorView == nil) {
+    _indicatorView = [[UIView alloc] init];
+  }
+  return _indicatorView;
+}
+
 - (UICollectionView *)containerView{
   if (_containerView == nil) {
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.containerViewLayout];
@@ -138,8 +176,29 @@
   self.containerViewLayout.itemSize = self.itemSize;
 }
 
+- (void)drawRect:(CGRect)rect{
+  [super drawRect:rect];
+  
+  /**
+   Select the collection view cell by the selected index.
+   */
+  [self.containerView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.selectedIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+}
+
 - (void)layoutSubviews{
   [super layoutSubviews];
+  
+  /**
+   by default,the selectedTextColor value is equal to the textColor value and the selectedFontSize value is equal to the selectedTextColor value.
+   */
+  
+  if (!_selectedTextColorSetted) {
+    self.selectedTextColor = self.textColor;
+  }
+  
+  if (!_selectedFontSizeSetted) {
+    self.selectedFontSize = self.fontSize;
+  }
   
   /**
    if the item type is YPSegementControlItemTypeDefault, 
@@ -160,6 +219,17 @@
   
   self.containerView.frame = CGRectMake(self.containerInsets.left, self.containerInsets.top, width - (self.containerInsets.left + self.containerInsets.right), height - (self.containerInsets.top + self.containerInsets.bottom));
   self.containerView.contentSize = CGSizeMake(self.totalContentWidth, self.containerView.frame.size.height);
+  
+  [self setIndicatorViewFrame];
+  self.indicatorView.backgroundColor = self.indicatorColor;
+}
+
+- (void)setIndicatorViewFrame{
+  CGFloat indicatorWidth = self.itemSize.width - (self.indicatorInsets.left + self.indicatorInsets.right);
+  CGFloat indicatorHeight = self.indicatorHeight;
+  CGFloat indicatorOriginX = self.selectedIndex * self.itemSize.width + self.indicatorInsets.left + self.containerInsets.left;
+  CGFloat indicatorOriginY = self.containerView.frame.origin.y + (self.itemSize.height - indicatorHeight - self.indicatorInsets.bottom);
+  self.indicatorView.frame = CGRectMake(indicatorOriginX, indicatorOriginY, indicatorWidth, indicatorHeight);
 }
 
 #pragma mark UICollection View Datasource
@@ -178,6 +248,8 @@
     labelCell.text = self.titles[indexPath.row];
     labelCell.textColor = self.textColor;
     labelCell.font = [UIFont systemFontOfSize:self.fontSize];
+    labelCell.selectedFont = [UIFont systemFontOfSize:self.selectedFontSize];
+    labelCell.selectedTextColor = self.selectedTextColor;
     cell = labelCell;
   }else if(self.itemType == YPSegementControlItemTypeCollectionViewCell){
     
@@ -199,10 +271,30 @@
 
 #pragma mark UICollection View Delegate
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+  return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+  if (self.itemType == YPSegementControlItemTypeDefault){
+    YPSegementCollectionViewLabelCell *labelCell = (YPSegementCollectionViewLabelCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    labelCell.selected = NO;
+  }
+  if ([self.delegate respondsToSelector:@selector(segementControl:didDeselectItemAtIndex:)]) {
+    [self.delegate segementControl:self didDeselectItemAtIndex:indexPath.row];
+  }
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+  if (self.itemType == YPSegementControlItemTypeDefault){
+    YPSegementCollectionViewLabelCell *labelCell = (YPSegementCollectionViewLabelCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    labelCell.selected = YES;
+  }
   if ([self.delegate respondsToSelector:@selector(segementControl:didSelectItemAtIndex:)]) {
     [self.delegate segementControl:self didSelectItemAtIndex:indexPath.row];
   }
+  self.selectedIndex = indexPath.row;
+  [self setIndicatorViewFrame];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -211,5 +303,6 @@
     [self.delegate segementControl:self willDisplayView:segementCollectionViewCell.customView atIndex:indexPath.row];
   }
 }
+
 
 @end
